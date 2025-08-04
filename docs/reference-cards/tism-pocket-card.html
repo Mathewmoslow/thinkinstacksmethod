@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)https://studyhubmatt.neocities.org/tism_tree/tismtree_pocket_print -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Think In Stacks Method Pocket Card - Print Ready</title>
+    <style>
+        @page {
+            size: 3.5in 5.5in;
+            margin: 0.2in;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            font-size: 8pt;
+            line-height: 1.2;
+            color: #2d3748;
+            background: white;
+        }
+        
+        .card {
+            width: 3.1in;
+            min-height: 5.1in;
+            margin: 0 auto;
+            padding: 8px;
+            border: 1px solid #a0aec0;
+            border-radius: 6px;
+            background: white;
+        }
+        
+        .header {
+            background: #2d3748;
+            color: white;
+            padding: 5px;
+            text-align: center;
+            margin: -8px -8px 6px -8px;
+            border-radius: 6px 6px 0 0;
+        }
+        
+        .header h1 {
+            font-size: 10pt;
+            margin: 0;
+            font-weight: 600;
+        }
+        
+        .header p {
+            font-size: 6pt;
+            margin-top: 2px;
+            opacity: 0.8;
+        }
+        
+        .section {
+            margin-bottom: 6px;
+            padding-bottom: 6px;
+            border-bottom: 1px dashed #cbd5e0;
+        }
+        
+        .section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .section-title {
+            font-weight: 600;
+            font-size: 8pt;
+            color: #2d3748;
+            margin-bottom: 3px;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        
+        .section-title.assess { background: #e6fffa; color: #22543d; }
+        .section-title.priority { background: #fff5f5; color: #742a2a; }
+        .section-title.format { background: #edf2f7; color: #2d3748; }
+        .section-title.rules { background: #fffdf7; color: #7b341e; }
+        .section-title.filters { background: #faf5ff; color: #44337a; }
+        
+        .section.priority-section { border-left: 3px solid #e53e3e; padding-left: 4px; }
+        .section.format-section { background: #f7fafc; padding: 4px; border-radius: 3px; }
+        
+        .keywords {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3px;
+            font-size: 7pt;
+        }
+        
+        .keyword {
+            padding: 1px 5px;
+            border-radius: 10px;
+            border: 1px solid;
+        }
+        
+        .keyword.green { background: #f0fff4; border-color: #9ae6b4; color: #22543d; }
+        .keyword.red { background: #fff5f5; border-color: #feb2b2; color: #742a2a; }
+        .keyword.yellow { background: #fffff0; border-color: #faf089; color: #744210; }
+        .keyword.blue { background: #ebf8ff; border-color: #90cdf4; color: #2a4e7c; }
+        .keyword.purple { background: #faf5ff; border-color: #d6bcfa; color: #44337a; }
+        
+        .stack {
+            background: linear-gradient(to right, #fff5f5, #fffdf7, #fffff0, #f0fff4);
+            padding: 4px;
+            border-radius: 4px;
+            font-size: 7pt;
+        }
+        
+        .stack-item {
+            background: white;
+            padding: 2px 4px;
+            margin: 2px 0;
+            border-left: 2px solid;
+            border-radius: 2px;
+        }
+        
+        .stack-item:nth-child(1) { border-color: #e53e3e; }
+        .stack-item:nth-child(2) { border-color: #ed8936; }
+        .stack-item:nth-child(3) { border-color: #ecc94b; }
+        .stack-item:nth-child(4) { border-color: #48bb78; }
+        
+        .mnemonic {
+            background: #faf089;
+            border: 1px solid #d69e2e;
+            color: #744210;
+            padding: 3px;
+            text-align: center;
+            font-style: italic;
+            font-size: 7pt;
+            border-radius: 3px;
+            margin-top: 3px;
+        }
+        
+        .question-guide {
+            background: #f7fafc;
+            padding: 4px;
+            border-radius: 3px;
+            font-size: 7pt;
+        }
+        
+        .question-type {
+            margin: 2px 0;
+            padding-left: 8px;
+        }
+        
+        .rule {
+            font-size: 7pt;
+            padding: 2px 0;
+        }
+        
+        .rule strong {
+            color: #4a5568;
+        }
+        
+        .ordered-box {
+            background: #e9d8fd;
+            padding: 4px;
+            border-radius: 3px;
+            font-size: 7pt;
+            margin-top: 3px;
+        }
+        
+        .step {
+            background: white;
+            padding: 1px 3px;
+            margin: 1px 0;
+            border-radius: 2px;
+        }
+        
+        .filters {
+            font-size: 7pt;
+            line-height: 1.3;
+        }
+        
+        .warning {
+            color: #742a2a;
+            font-weight: 600;
+            font-size: 7pt;
+        }
+        
+        .warning::before {
+            content: "⚠ ";
+        }
+        
+        /* Tie-breaker section */
+        .section.tiebreaker {
+            border: 2px solid #e53e3e; 
+            background: #fff5f5; 
+            margin: -8px -8px 0 -8px; 
+            border-radius: 0 0 6px 6px; 
+            padding: 8px;
+        }
+        
+        .section-title.tiebreaker {
+            background: #e53e3e; 
+            color: white;
+            margin: -8px -8px 6px -8px;
+            padding: 4px;
+            border-radius: 4px 4px 0 0;
+        }
+        
+        .icon-target::before {
+            content: "◎";
+            margin-right: 3px;
+        }
+        
+        @media print {
+            .card {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+            
+            .header {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .section-title.tiebreaker {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="header">
+            <h1>Thin In Stacks Method</h1>
+            <p>Color-coded for quick navigation</p>
+        </div>
+        
+        <!-- Question Types -->
+        <div class="section">
+            <div class="section-title assess">1. Identify Question Type</div>
+            <div class="keywords">
+                <span class="keyword green">Assess: gather</span>
+                <span class="keyword red">Priority: first</span>
+                <span class="keyword yellow">Do: action</span>
+                <span class="keyword blue">Eval: outcome</span>
+                <span class="keyword purple">Order: sequence</span>
+            </div>
+        </div>
+        
+        <!-- Stack of Four -->
+        <div class="section priority-section">
+            <div class="section-title priority">Stack of Four (Priority)</div>
+            <div class="stack">
+                <div class="stack-item">1. A-B-C-D</div>
+                <div class="stack-item">2. Safety (PHYSICAL only)</div>
+                <div class="stack-item">3. Maslow: nutrition, sleep, pain, elimination</div>
+                <div class="stack-item">4. Assess→Act</div>
+            </div>
+            <div class="mnemonic">"Always Be Caring Daily"<br>
+            <span style="font-size: 6pt;">Psychosocial = After Stack #4</span></div>
+        </div>
+        
+        <!-- Question Strategies -->
+        <div class="section format-section">
+            <div class="section-title format">By Question Format</div>
+            <div class="question-guide">
+                <div class="question-type"><strong>Single:</strong> Stop at 1st Stack match</div>
+                <div class="question-type"><strong>SATA:</strong> Check all → Pick all matches</div>
+                <div class="question-type"><strong>Order:</strong> Pick all → Sort by Stack</div>
+            </div>
+            <div class="ordered-box">
+                <div class="warning">Ordered Response Process:</div>
+                <div class="step">1. ID all correct (like SATA)</div>
+                <div class="step">2. Arrange: ABCD→Safety→Maslow</div>
+            </div>
+        </div>
+        
+        <!-- Quick Rules -->
+        <div class="section">
+            <div class="section-title rules">Quick Rules</div>
+            <div class="rule"><strong>Assess:</strong> Baseline &gt; Causes</div>
+            <div class="rule"><strong>Implement:</strong> Least → Most invasive</div>
+            <div class="rule"><strong>Delegate:</strong> Stable=Yes, Unstable=No</div>
+            <div class="rule"><strong>Evaluate:</strong> Own words = Got it</div>
+            <div class="rule" style="background: #fffdf7; margin-top: 3px; padding: 2px 4px; border-radius: 2px;">
+                <strong>Maslow Q's:</strong> nutrition, sleep, pain, bathroom = Stack #3
+            </div>
+            <div style="font-size: 6pt; color: #718096; text-align: center; margin-top: 2px;">
+                *Urine retention/impaction → Stack #2
+            </div>
+        </div>
+        
+        <!-- Filters -->
+        <div class="section">
+            <div class="section-title filters">Final Filters</div>
+            <div class="filters">
+                • Always/Never = Red flag<br>
+                • Two similar = Both out<br>
+                • Covers all = Winner<br>
+                • Changed answer? Go back!<br>
+                • First instinct = Best
+            </div>
+        </div>
+        
+        <!-- Tie-Breaker -->
+        <div class="section tiebreaker">
+            <div class="section-title tiebreaker"><span class="icon-target"></span>TIE-BREAKERS</div>
+            <div style="font-size: 7pt;">
+                <strong>Same Stack Level?</strong><br>
+                <span style="background: #faf089; padding: 1px 3px;">1. Assessment about tied items → WINS</span><br>
+                <span style="font-size: 6pt; color: #718096;">Ex: "Assess patterns" beats "Give food"</span><br>
+                2. No assessment? → Use urgency:<br>
+                <div style="margin-left: 8px; font-size: 6pt; line-height: 1.1;">
+                    <strong>Hours:</strong> Glucose, Urine<br>
+                    <strong>Days:</strong> Pain, Fluids<br>
+                    <strong>Weeks:</strong> Food, Sleep, Activity
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body></html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Think In Stacks Method (TISM) - Resources</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2d3748;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+        }
+        
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .resource-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .resource-card:hover {
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transform: translateY(-2px);
+        }
+        
+        .resource-card h3 {
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+        
+        .resource-card p {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .tag {
+            display: inline-block;
+            background: #e6fffa;
+            color: #22543d;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-top: 10px;
+        }
+        
+        .intro {
+            background: #f7fafc;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+        
+        .nav-links {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .nav-links a {
+            color: #3182ce;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .implementation-card {
+            background: #fff5f5;
+            border-color: #feb2b2;
+        }
+        
+        .reference-card {
+            background: #e6fffa;
+            border-color: #9ae6b4;
+        }
+        
+        .research-card {
+            background: #ebf4ff;
+            border-color: #90cdf4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Think In Stacks Method (TISM)</h1>
+        <p class="subtitle">A Validated Framework for Nursing Clinical Decision-Making</p>
+        
+        <div class="intro">
+            <h2>What is TISM?</h2>
+            <p>The Think In Stacks Method is a structured approach to prioritizing nursing interventions based on a four-stack hierarchy:</p>
+            <ol>
+                <li><strong>Life Threats (ABC+D)</strong> - Airway, Breathing, Circulation, Disability</li>
+                <li><strong>Safety</strong> - Falls, Infection, Violence</li>
+                <li><strong>Physical Needs</strong> - Glucose (minutes), Pain/Elimination (hours), Nutrition (days)</li>
+                <li><strong>Nursing Process</strong> - Assessment, Diagnosis, Planning, Implementation, Evaluation</li>
+            </ol>
+            <p style="margin-top: 15px;"><em>Remember: Assessment wins ties!</em></p>
+        </div>
+        
+        <h2>📚 Available Resources</h2>
+        
+        <div class="resource-grid">
+            <a href="reference-cards/tism-complete-guide.html" class="resource-card reference-card">
+                <h3>📖 Complete TISM Guide</h3>
+                <p>Interactive web guide with full explanations, examples, and practice scenarios</p>
+                <span class="tag">Interactive</span>
+                <span class="tag">Comprehensive</span>
+            </a>
+            
+            <a href="reference-cards/tism-pocket-card.html" class="resource-card reference-card">
+                <h3>📇 Pocket Reference Card</h3>
+                <p>Print-ready pocket card (3.5" x 5.5") for quick reference during clinical practice</p>
+                <span class="tag">Printable</span>
+                <span class="tag">Quick Reference</span>
+            </a>
+            
+            <a href="https://github.com/Mathewmoslow/thinkinstacksmethod" class="resource-card implementation-card">
+                <h3>💻 TISM Implementation</h3>
+                <p>Python implementation with machine learning, validation tools, and examples</p>
+                <span class="tag">Source Code</span>
+                <span class="tag">ML-Enhanced</span>
+            </a>
+            
+            <a href="../TISM_Paper_APA7.html" class="resource-card research-card">
+                <h3>📄 Research Paper</h3>
+                <p>Academic paper detailing TISM validation, methodology, and results</p>
+                <span class="tag">Research</span>
+                <span class="tag">APA Format</span>
+            </a>
+        </div>
+        
+        <div class="intro" style="margin-top: 40px;">
+            <h2>📊 Validation Results</h2>
+            <p>TISM has been validated on 68 priority-setting NCLEX questions with the following results:</p>
+            <ul>
+                <li>Basic TISM: 25.0% accuracy (+2.9% over random baseline)</li>
+                <li>Context-Aware: 26.5% accuracy (+4.4% over baseline)</li>
+                <li>With Clinical Knowledge: 27.9% accuracy (+5.9% over baseline)</li>
+                <li>Clear emergencies: Up to 100% accuracy</li>
+            </ul>
+            <p style="margin-top: 15px;"><strong>Key Finding:</strong> TISM works best as a thinking framework that organizes clinical knowledge, not as a standalone answer-finder.</p>
+        </div>
+        
+        <div class="nav-links">
+            <a href="https://github.com/Mathewmoslow/thinkinstacksmethod">GitHub Repository</a>
+            <a href="mailto:support@tism.example.com">Contact</a>
+            <a href="https://github.com/Mathewmoslow/thinkinstacksmethod/issues">Report Issues</a>
+        </div>
+    </div>
+</body>
+</html>

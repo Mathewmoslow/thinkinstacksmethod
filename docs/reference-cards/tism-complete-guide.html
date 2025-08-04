@@ -1,0 +1,1418 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)https://studyhubmatt.neocities.org/tism_tree/tism_tree_web -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Think In Stacks Method - Complete Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        :root {
+            --primary: #2d3748;
+            --secondary: #4a5568;
+            --accent: #667eea;
+            --success: #48bb78;
+            --danger: #e53e3e;
+            --warning: #ed8936;
+            --info: #3182ce;
+            --purple: #805ad5;
+            --light: #f7fafc;
+            --dark: #1a202c;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--primary);
+            background: var(--light);
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* Navigation */
+        .nav-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--dark);
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+        
+        .nav-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            color: white;
+        }
+        
+        .nav-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+        
+        .menu-toggle {
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 4px;
+            background: none;
+            border: none;
+            padding: 0;
+        }
+        
+        .menu-toggle span {
+            width: 100%;
+            height: 3px;
+            background: white;
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+        
+        .menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 1rem;
+            padding: 0 1rem 1rem;
+            overflow-x: auto;
+            scrollbar-width: thin;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .nav-menu::-webkit-scrollbar {
+            height: 4px;
+        }
+        
+        .nav-menu::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-menu::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 2px;
+        }
+        
+        .nav-item {
+            flex-shrink: 0;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 20px;
+            color: white;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: var(--transition);
+            white-space: nowrap;
+        }
+        
+        .nav-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .nav-item.active {
+            background: var(--accent);
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: -280px;
+            width: 280px;
+            height: 100%;
+            background: white;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            z-index: 999;
+            overflow-y: auto;
+        }
+        
+        .sidebar.active {
+            left: 0;
+        }
+        
+        .sidebar-header {
+            padding: 1.5rem;
+            background: var(--primary);
+            color: white;
+        }
+        
+        .sidebar-menu {
+            padding: 1rem 0;
+        }
+        
+        .sidebar-item {
+            display: block;
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border: none;
+            background: none;
+            text-align: left;
+            font-size: 1rem;
+            color: var(--primary);
+            cursor: pointer;
+            transition: var(--transition);
+            border-left: 3px solid transparent;
+        }
+        
+        .sidebar-item:hover {
+            background: var(--light);
+            border-left-color: var(--accent);
+        }
+        
+        .sidebar-item.active {
+            background: var(--light);
+            border-left-color: var(--accent);
+            color: var(--accent);
+            font-weight: 600;
+        }
+        
+        /* Main Content */
+        .main-container {
+            margin-top: 80px;
+            min-height: calc(100vh - 80px);
+            position: relative;
+        }
+        
+        .section {
+            display: none;
+            padding: 1rem;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        
+        .section.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Cards */
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+        
+        .card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-header {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .step-number {
+            width: 30px;
+            height: 30px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        /* Question Types */
+        .question-types {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .type-tag {
+            padding: 0.375rem 0.875rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+        
+        .type-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .type-tag.assessment { 
+            background: #e6fffa; 
+            color: #22543d; 
+            border: 1px solid #9ae6b4; 
+        }
+        
+        .type-tag.priority { 
+            background: #fff5f5; 
+            color: #742a2a; 
+            border: 1px solid #feb2b2; 
+        }
+        
+        .type-tag.implementation { 
+            background: #fffdf7; 
+            color: #7b341e; 
+            border: 1px solid #fbd38d; 
+        }
+        
+        .type-tag.evaluation { 
+            background: #ebf8ff; 
+            color: #2a4e7c; 
+            border: 1px solid #90cdf4; 
+        }
+        
+        .type-tag.ordered { 
+            background: #faf5ff; 
+            color: #44337a; 
+            border: 1px solid #d6bcfa; 
+        }
+        
+        /* Stack of Four */
+        .stack-container {
+            background: linear-gradient(135deg, #fff5f5, #fffdf7, #fffff0, #f0fff4);
+            border-radius: 12px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .stack-item {
+            background: white;
+            padding: 0.875rem;
+            margin: 0.5rem 0;
+            border-radius: 8px;
+            border-left: 4px solid;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+        
+        .stack-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stack-item:nth-child(1) { border-left-color: var(--danger); }
+        .stack-item:nth-child(2) { border-left-color: var(--warning); }
+        .stack-item:nth-child(3) { border-left-color: #ecc94b; }
+        .stack-item:nth-child(4) { border-left-color: var(--success); }
+        
+        /* Collapsible Sections */
+        .collapsible {
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+            padding-right: 2rem;
+        }
+        
+        .collapsible::after {
+            content: '▼';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: var(--transition);
+            color: var(--accent);
+        }
+        
+        .collapsible.collapsed::after {
+            transform: translateY(-50%) rotate(-90deg);
+        }
+        
+        .collapsible-content {
+            max-height: 2000px;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .collapsible-content.collapsed {
+            max-height: 0;
+        }
+        
+        /* Quick Actions */
+        .quick-actions {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            z-index: 100;
+        }
+        
+        .fab {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--accent);
+            color: white;
+            border: none;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+        
+        .fab:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+        }
+        
+        .fab.secondary {
+            width: 48px;
+            height: 48px;
+            background: white;
+            color: var(--accent);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Choose/Skip Boxes */
+        .choose-skip {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        @media (min-width: 640px) {
+            .choose-skip {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .choose-box, .skip-box {
+            padding: 1rem;
+            border-radius: 8px;
+            border: 2px solid;
+            transition: var(--transition);
+        }
+        
+        .choose-box {
+            background: #f0fff4;
+            border-color: #9ae6b4;
+        }
+        
+        .skip-box {
+            background: #fff5f5;
+            border-color: #feb2b2;
+        }
+        
+        .choose-box:hover, .skip-box:hover {
+            transform: scale(1.02);
+        }
+        
+        /* Urgency List */
+        .urgency-list {
+            background: #fff5f5;
+            padding: 1.25rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border: 1px solid #feb2b2;
+        }
+        
+        .urgency-item {
+            padding: 0.5rem 0;
+            margin-left: 1.5rem;
+            position: relative;
+        }
+        
+        .urgency-item::before {
+            content: '•';
+            position: absolute;
+            left: -1rem;
+            color: var(--danger);
+        }
+        
+        /* Exceptions */
+        .exception-card {
+            border-left: 4px solid;
+            margin-bottom: 1rem;
+            transition: var(--transition);
+        }
+        
+        .exception-card:hover {
+            transform: translateX(5px);
+        }
+        
+        .exception-1 { 
+            border-left-color: #d69e2e; 
+            background: #fffff0; 
+        }
+        
+        .exception-2 { 
+            border-left-color: var(--danger); 
+            background: #fff5f5; 
+        }
+        
+        .exception-3 { 
+            border-left-color: var(--info); 
+            background: #ebf8ff; 
+        }
+        
+        .exception-4 { 
+            border-left-color: var(--purple); 
+            background: #faf5ff; 
+        }
+        
+        /* Mobile Optimizations */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .nav-menu.active {
+                display: flex;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--dark);
+                padding: 1rem;
+                flex-direction: column;
+            }
+            
+            .main-container {
+                margin-top: 60px;
+            }
+            
+            .quick-actions {
+                bottom: 1rem;
+                right: 1rem;
+            }
+        }
+        
+        /* Loading Animation */
+        .loading {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+        }
+        
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid var(--light);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Overlay */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 998;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .overlay.active {
+            display: block;
+            opacity: 1;
+        }
+        
+        /* Tooltips */
+        .tooltip {
+            position: relative;
+            display: inline-block;
+            cursor: help;
+        }
+        
+        .tooltip::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 125%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--dark);
+            color: white;
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
+            white-space: nowrap;
+            font-size: 0.875rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+        
+        .tooltip:hover::after {
+            opacity: 1;
+        }
+        
+        /* Print Styles */
+        @media print {
+            .nav-container,
+            .sidebar,
+            .quick-actions,
+            .menu-toggle {
+                display: none !important;
+            }
+            
+            .main-container {
+                margin-top: 0;
+            }
+            
+            .section {
+                display: block !important;
+                page-break-after: always;
+            }
+        }
+    </style>
+<style>
+            @keyframes pulse {
+                0% { box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.4); }
+                70% { box-shadow: 0 0 0 10px rgba(102, 126, 234, 0); }
+                100% { box-shadow: 0 0 0 0 rgba(102, 126, 234, 0); }
+            }
+        </style></head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <div class="nav-header">
+            <h1 class="nav-title">Think In Stacks Method</h1>
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <div class="nav-menu" id="navMenu">
+            <button class="nav-item active" onclick="showSection(&#39;flowchart&#39;)">Flowchart</button>
+            <button class="nav-item" onclick="showSection(&#39;quickref&#39;)">Quick Reference</button>
+            <button class="nav-item" onclick="showSection(&#39;exceptions&#39;)">Exceptions</button>
+            <button class="nav-item" onclick="showSection(&#39;filters&#39;)">Rapid Filters</button>
+            <button class="nav-item" onclick="showSection(&#39;practice&#39;)">Practice Mode</button>
+        </div>
+    </nav>
+    
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>Navigation</h2>
+        </div>
+        <div class="sidebar-menu">
+            <button class="sidebar-item active" onclick="showSection(&#39;flowchart&#39;); closeSidebar()">
+                Decision Flowchart
+            </button>
+            <button class="sidebar-item" onclick="showSection(&#39;quickref&#39;); closeSidebar()">
+                Quick Reference Card
+            </button>
+            <button class="sidebar-item" onclick="showSection(&#39;exceptions&#39;); closeSidebar()">
+                Framework Exceptions
+            </button>
+            <button class="sidebar-item" onclick="showSection(&#39;filters&#39;); closeSidebar()">
+                Rapid Filters Guide
+            </button>
+            <button class="sidebar-item" onclick="showSection(&#39;practice&#39;); closeSidebar()">
+                Practice Mode
+            </button>
+        </div>
+    </aside>
+    
+    <!-- Overlay -->
+    <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
+    
+    <!-- Main Content -->
+    <main class="main-container">
+        <!-- Flowchart Section -->
+        <section class="section active" id="flowchart">
+            <div class="card">
+                <h2 class="card-header">Think In Stacks Method</h2>
+                <p style="color: #718096; margin-bottom: 1rem;">One path. Every question. Stop when you find your answer.</p>
+                
+                <!-- Step 1 -->
+                <div class="card">
+                    <div class="card-header">
+                        <span class="step-number">1</span>
+                        <span>Identify Question Type</span>
+                    </div>
+                    <div class="question-types">
+                        <span class="type-tag assessment" onclick="highlightSection(&#39;assessment&#39;)">Assessment (gather, review)</span>
+                        <span class="type-tag priority" onclick="highlightSection(&#39;priority&#39;)">Priority (first, immediate)</span>
+                        <span class="type-tag implementation" onclick="highlightSection(&#39;implementation&#39;)">Implementation (do, teach)</span>
+                        <span class="type-tag evaluation" onclick="highlightSection(&#39;evaluation&#39;)">Evaluation (outcome)</span>
+                        <span class="type-tag ordered" onclick="highlightSection(&#39;ordered&#39;)">Ordered (sequence, order)</span>
+                    </div>
+                </div>
+                
+                <!-- Assessment Section -->
+                <div class="card" id="assessment-section" style="border-left: 4px solid var(--success);">
+                    <div class="card-header collapsible" onclick="toggleCollapse(this)">
+                        <span class="step-number" style="background: var(--success);">2</span>
+                        <span>Assessment Questions</span>
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="choose-skip">
+                            <div class="choose-box">
+                                <strong>✓ CHOOSE THIS</strong><br>
+                                Baseline data: patterns, trends, usual habits
+                            </div>
+                            <div class="skip-box">
+                                <strong>✗ SKIP THESE</strong><br>
+                                Why questions, causes, teaching
+                            </div>
+                        </div>
+                        <div style="background: #faf089; padding: 1rem; border-radius: 8px; text-align: center; margin-top: 1rem;">
+                            <em>"B-4 you treat, know the baseline"</em>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Priority Section -->
+                <div class="card" id="priority-section" style="border-left: 4px solid var(--danger);">
+                    <div class="card-header collapsible" onclick="toggleCollapse(this)">
+                        <span class="step-number" style="background: var(--danger);">3</span>
+                        <span>Priority Questions - Stack of Four</span>
+                    </div>
+                    <div class="collapsible-content">
+                        <div class="stack-container">
+                            <div class="stack-item"><strong>1.</strong> Airway → Breathing → Circulation → Disability</div>
+                            <div class="stack-item"><strong>2.</strong> Safety/Risk <em>(PHYSICAL harm only)</em></div>
+                            <div class="stack-item"><strong>3.</strong> Maslow Physiological (pain, nutrition, fluids, sleep, elimination)</div>
+                            <div class="stack-item"><strong>4.</strong> Nursing Process (assess before act)</div>
+                        </div>
+                        <div style="background: #edf2f7; padding: 1rem; border-radius: 8px; text-align: center; margin: 1rem 0;">
+                            ↓ Psychosocial needs (anxiety, coping, emotional) come AFTER Stack #4 ↓
+                        </div>
+                        <p><strong>Single Answer:</strong> Stop at first match<br>
+                        <strong>SATA:</strong> Check ALL options, select all matches</p>
+                    </div>
+                </div>
+                
+                <!-- Implementation Section -->
+                <div class="card" id="implementation-section" style="border-left: 4px solid var(--warning);">
+                    <div class="card-header collapsible" onclick="toggleCollapse(this)">
+                        <span class="step-number" style="background: var(--warning);">4</span>
+                        <span>Implementation Questions</span>
+                    </div>
+                    <div class="collapsible-content">
+                        <div style="background: #f7fafc; padding: 0.75rem; margin: 0.5rem 0; border-left: 3px solid #718096;">
+                            <strong>Stable = Delegate ↔ Unstable = RN</strong>
+                        </div>
+                        <div style="background: #f7fafc; padding: 0.75rem; margin: 0.5rem 0; border-left: 3px solid #718096;">
+                            <strong>Least → Most Invasive</strong> (position → meds → procedures)
+                        </div>
+                        <div style="background: #f7fafc; padding: 0.75rem; margin: 0.5rem 0; border-left: 3px solid #718096;">
+                            <strong>Independent → Dependent</strong> (nursing actions → provider orders)
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Evaluation Section -->
+                <div class="card" id="evaluation-section" style="border-left: 4px solid var(--info);">
+                    <div class="card-header collapsible" onclick="toggleCollapse(this)">
+                        <span class="step-number" style="background: var(--info);">5</span>
+                        <span>Evaluation Questions</span>
+                    </div>
+                    <div class="collapsible-content">
+                        <p>Look for proof the goal was met:</p>
+                        <ul style="margin-left: 1.5rem;">
+                            <li>Labs within normal range</li>
+                            <li>Symptoms resolved</li>
+                            <li>Client verbalizes understanding <span style="background: #faf089; padding: 0.125rem 0.25rem;">in own words</span></li>
+                            <li>Demonstrates correct technique</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Ordered Response Section -->
+                <div class="card" id="ordered-section" style="border-left: 4px solid var(--purple);">
+                    <div class="card-header collapsible" onclick="toggleCollapse(this)">
+                        <span class="step-number" style="background: var(--purple);">6</span>
+                        <span>Ordered Response Questions</span>
+                    </div>
+                    <div class="collapsible-content">
+                        <div style="background: #e9d8fd; padding: 1rem; border-radius: 8px;">
+                            <div style="background: white; padding: 0.5rem; margin: 0.25rem 0; border-radius: 4px;">
+                                <strong>Step 1:</strong> Identify ALL correct actions (like SATA)
+                            </div>
+                            <div style="background: white; padding: 0.5rem; margin: 0.25rem 0; border-radius: 4px;">
+                                <strong>Step 2:</strong> Arrange using Stack of Four priority
+                            </div>
+                            <div style="background: white; padding: 0.5rem; margin: 0.25rem 0; border-radius: 4px;">
+                                <strong>Step 3:</strong> ABCD → Safety → Maslow → Process
+                            </div>
+                        </div>
+                        <div style="background: #fff5f5; border: 1px solid #feb2b2; color: #742a2a; padding: 0.75rem; border-radius: 4px; text-align: center; margin-top: 0.5rem;">
+                            ⚠ Different from SATA - you must sequence the actions!
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tie-Breaker Rules -->
+                <div class="card" style="border: 2px solid var(--danger); background: #fff5f5;">
+                    <div class="card-header" style="background: var(--danger); color: white; margin: -1.5rem -1.5rem 1rem -1.5rem; padding: 1rem 1.5rem; border-radius: 10px 10px 0 0;">
+                        🎯 TIE-BREAKER RULES (Same Stack Level)
+                    </div>
+                    <p><strong>RULE #1:</strong> If assessment option exists about the tied items → <span style="background: #faf089; padding: 0.25rem 0.5rem;">ASSESSMENT WINS</span></p>
+                    <p style="font-size: 0.875rem; color: #718096; margin-bottom: 1rem;">Example: "Assess voiding patterns" beats "Address nutrition" when both are Stack #3</p>
+                    
+                    <p><strong>RULE #2:</strong> No assessment option? Use urgency levels:</p>
+                    <div class="urgency-list">
+                        <strong>Stack #3 Physiological Urgency (highest to lowest):</strong>
+                        <div class="urgency-item"><strong>Glucose/Diabetic needs</strong> (hours)</div>
+                        <div class="urgency-item"><strong>Elimination problems</strong> (hours-days)*</div>
+                        <div class="urgency-item"><strong>Pain</strong> (hours-days)</div>
+                        <div class="urgency-item"><strong>Fluids/Hydration</strong> (days)</div>
+                        <div class="urgency-item"><strong>Nutrition</strong> (days-weeks)</div>
+                        <div class="urgency-item"><strong>Sleep</strong> (days-weeks)</div>
+                        <div class="urgency-item"><strong>Temperature</strong> (varies)</div>
+                        <div class="urgency-item"><strong>Activity/Exercise</strong> (weeks)</div>
+                    </div>
+                    <p style="font-size: 0.875rem; color: #718096; margin-top: 0.5rem;">
+                        *Elimination with complications (retention, impaction) jumps to Stack #2
+                    </p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Quick Reference Section -->
+        <section class="section" id="quickref">
+            <div class="card" style="max-width: 400px; margin: 0 auto;">
+                <h2 class="card-header" style="text-align: center;">NCLEX Quick Reference v2</h2>
+                
+                <!-- Swipeable Cards Container -->
+                <div class="swipe-container" style="position: relative; overflow: hidden; touch-action: pan-y;">
+                    <div class="swipe-wrapper" style="display: flex; transition: transform 0.3s;">
+                        <!-- Card 1 -->
+                        <div class="swipe-card" style="min-width: 100%; padding: 1rem;">
+                            <h3 style="color: var(--success); margin-bottom: 0.5rem;">1. Identify Question Type</h3>
+                            <div class="question-types">
+                                <span class="type-tag assessment">Assess: gather</span>
+                                <span class="type-tag priority">Priority: first</span>
+                                <span class="type-tag implementation">Do: action</span>
+                                <span class="type-tag evaluation">Eval: outcome</span>
+                                <span class="type-tag ordered">Order: sequence</span>
+                            </div>
+                            
+                            <h3 style="color: var(--danger); margin: 1rem 0 0.5rem;">Stack of Four</h3>
+                            <div class="stack-container">
+                                <div class="stack-item">1. A-B-C-D</div>
+                                <div class="stack-item">2. Safety (PHYSICAL only)</div>
+                                <div class="stack-item">3. Maslow: nutrition, sleep, pain</div>
+                                <div class="stack-item">4. Assess→Act</div>
+                            </div>
+                            <div style="background: #faf089; padding: 0.5rem; text-align: center; border-radius: 4px; margin-top: 0.5rem;">
+                                <em>"Always Be Caring Daily"</em>
+                            </div>
+                        </div>
+                        
+                        <!-- Card 2 -->
+                        <div class="swipe-card" style="min-width: 100%; padding: 1rem;">
+                            <h3 style="margin-bottom: 0.5rem;">Question Formats</h3>
+                            <div style="background: #f7fafc; padding: 1rem; border-radius: 8px;">
+                                <p><strong>Single:</strong> Stop at 1st Stack match</p>
+                                <p><strong>SATA:</strong> Check all → Pick all matches</p>
+                                <p><strong>Order:</strong> Pick all → Sort by Stack</p>
+                            </div>
+                            
+                            <h3 style="margin: 1rem 0 0.5rem;">Quick Rules</h3>
+                            <div style="font-size: 0.875rem;">
+                                <p>• <strong>Assess:</strong> Baseline &gt; Causes</p>
+                                <p>• <strong>Implement:</strong> Least → Most invasive</p>
+                                <p>• <strong>Delegate:</strong> Stable=Yes, Unstable=No</p>
+                                <p>• <strong>Evaluate:</strong> Own words = Got it</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Card 3 -->
+                        <div class="swipe-card" style="min-width: 100%; padding: 1rem;">
+                            <h3 style="color: var(--danger); margin-bottom: 0.5rem;">🎯 Tie-Breakers</h3>
+                            <div style="background: #fff5f5; padding: 1rem; border-radius: 8px; border: 1px solid #feb2b2;">
+                                <p><strong>Same Stack Level?</strong></p>
+                                <p style="background: #faf089; padding: 0.25rem; text-align: center; margin: 0.5rem 0;">
+                                    1. Assessment about tied items → WINS
+                                </p>
+                                <p><strong>2. No assessment? → Use urgency:</strong></p>
+                                <ul style="font-size: 0.875rem; margin-left: 1rem;">
+                                    <li><strong>Hours:</strong> Glucose, Urine</li>
+                                    <li><strong>Days:</strong> Pain, Fluids</li>
+                                    <li><strong>Weeks:</strong> Food, Sleep, Activity</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Swipe Indicators -->
+                <div style="display: flex; justify-content: center; gap: 0.5rem; margin-top: 1rem;">
+                    <span class="swipe-dot active" onclick="swipeToCard(0)" style="width: 8px; height: 8px; border-radius: 50%; background: var(--accent); cursor: pointer; transition: all 0.3s;"></span>
+                    <span class="swipe-dot" onclick="swipeToCard(1)" style="width: 8px; height: 8px; border-radius: 50%; background: #cbd5e0; cursor: pointer; transition: all 0.3s;"></span>
+                    <span class="swipe-dot" onclick="swipeToCard(2)" style="width: 8px; height: 8px; border-radius: 50%; background: #cbd5e0; cursor: pointer; transition: all 0.3s;"></span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Exceptions Section -->
+        <section class="section" id="exceptions">
+            <div class="card">
+                <h2 class="card-header">When the Framework Bends: NCLEX Exceptions</h2>
+                <p style="color: #718096; margin-bottom: 1rem;">The 5% of questions that require special handling</p>
+                
+                <!-- Exception 1 -->
+                <div class="card exception-card exception-1">
+                    <div class="card-header" style="background: #f6e05e; color: #744210;">
+                        ⏱ Exception #1: Time Sequence
+                    </div>
+                    <div class="collapsible-content">
+                        <p><strong>Looks Like:</strong> "After...", "Following...", "Has already...", "Next..."</p>
+                        <p><strong>Trap:</strong> Highest priority already completed</p>
+                        <div style="background: #e6fffa; padding: 0.75rem; border-radius: 4px; margin: 0.5rem 0;">
+                            <strong>Example:</strong> "After establishing airway..."<br>
+                            <span style="color: var(--danger);">✗ Check airway again</span><br>
+                            <span style="color: var(--success);">✓ Move to breathing</span>
+                        </div>
+                        <p><strong>Handle:</strong></p>
+                        <ol style="margin-left: 1.5rem;">
+                            <li>ID completed actions</li>
+                            <li>Start Stack where they left off</li>
+                            <li>Move to next in sequence</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <!-- Exception 2 -->
+                <div class="card exception-card exception-2">
+                    <div class="card-header" style="background: #fc8181; color: #742a2a;">
+                        ⊘ Exception #2: Exclusion
+                    </div>
+                    <div class="collapsible-content">
+                        <p><strong>Looks Like:</strong> "EXCEPT...", "AVOID...", "NOT appropriate..."</p>
+                        <p><strong>Trap:</strong> Brain picks BEST, question wants WORST</p>
+                        <div style="background: #e6fffa; padding: 0.75rem; border-radius: 4px; margin: 0.5rem 0;">
+                            <strong>Example:</strong> "All appropriate EXCEPT:"<br>
+                            <span style="color: var(--danger);">✗ Pick best action</span><br>
+                            <span style="color: var(--success);">✓ Find harmful action</span>
+                        </div>
+                        <p><strong>Handle:</strong></p>
+                        <ol style="margin-left: 1.5rem;">
+                            <li>Circle EXCEPT in red</li>
+                            <li>Reverse thinking</li>
+                            <li>Find dangerous option</li>
+                            <li>Often highest Stack (too aggressive)</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <!-- Exception 3 -->
+                <div class="card exception-card exception-3">
+                    <div class="card-header" style="background: #63b3ed; color: #2a4e7c;">
+                        ↻ Exception #3: Chronic vs New
+                    </div>
+                    <div class="collapsible-content">
+                        <p><strong>Looks Like:</strong> "Usual...", "Chronic...", "Sudden...", "New onset..."</p>
+                        <p><strong>Trap:</strong> Stack prioritizes chronic high over new low</p>
+                        <div style="background: #e6fffa; padding: 0.75rem; border-radius: 4px; margin: 0.5rem 0;">
+                            <strong>Example:</strong> Chronic pain 8/10 + New confusion<br>
+                            <span style="color: var(--danger);">✗ Treat pain (Stack #3)</span><br>
+                            <span style="color: var(--success);">✓ Assess confusion (new problem)</span>
+                        </div>
+                        <p><strong>Handle:</strong></p>
+                        <ol style="margin-left: 1.5rem;">
+                            <li>Flag chronic/usual</li>
+                            <li>Highlight new/sudden</li>
+                            <li>New beats chronic</li>
+                            <li>Acute jumps up a Stack</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <!-- Exception 4 -->
+                <div class="card exception-card exception-4">
+                    <div class="card-header" style="background: #b794f4; color: #44337a;">
+                        ◎ Exception #4: Context-Specific
+                    </div>
+                    <div class="collapsible-content">
+                        <p><strong>Looks Like:</strong> Psych unit, Cultural, Legal/ethical, Pediatric</p>
+                        <p><strong>Trap:</strong> Context changes priority meaning</p>
+                        <div style="background: #e6fffa; padding: 0.75rem; border-radius: 4px; margin: 0.5rem 0;">
+                            <strong>Psych:</strong> Suicidal + needs insulin<br>
+                            <span style="color: var(--danger);">✗ Glucose first</span><br>
+                            <span style="color: var(--success);">✓ Suicide = Safety (Stack #2)</span><br>
+                            <strong>Legal:</strong> Refusing treatment<br>
+                            <span style="color: var(--danger);">✗ Force treatment</span><br>
+                            <span style="color: var(--success);">✓ Respect autonomy</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Safety Net Protocol -->
+                <div class="card" style="background: #faf5ff; border: 2px solid var(--purple);">
+                    <div class="card-header" style="background: var(--purple); color: white; margin: -1.5rem -1.5rem 1rem -1.5rem; padding: 1rem 1.5rem; border-radius: 10px 10px 0 0;">
+                        ⛊ SAFETY NET PROTOCOL
+                    </div>
+                    <div class="collapsible-content">
+                        <h4>1. Re-Read for Qualifiers</h4>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem;">
+                            <span style="background: #faf089; padding: 0.25rem 0.75rem; border-radius: 20px; border: 1px solid #d69e2e;">After</span>
+                            <span style="background: #faf089; padding: 0.25rem 0.75rem; border-radius: 20px; border: 1px solid #d69e2e;">Except</span>
+                            <span style="background: #faf089; padding: 0.25rem 0.75rem; border-radius: 20px; border: 1px solid #d69e2e;">Not</span>
+                            <span style="background: #faf089; padding: 0.25rem 0.75rem; border-radius: 20px; border: 1px solid #d69e2e;">Independent</span>
+                            <span style="background: #faf089; padding: 0.25rem 0.75rem; border-radius: 20px; border: 1px solid #d69e2e;">First</span>
+                            <span style="background: #faf089; padding: 0.25rem 0.75rem; border-radius: 20px; border: 1px solid #d69e2e;">Most/Least</span>
+                        </div>
+                        
+                        <h4>2. Override Rules</h4>
+                        <div style="background: #edf2f7; padding: 0.75rem; border-radius: 4px;">
+                            <p>→ New &gt; Old (even if old higher)</p>
+                            <p>→ Unexpected &gt; Expected</p>
+                            <p>→ Reversible &gt; Irreversible</p>
+                            <p>→ Legal/Ethics &gt; Clinical (sometimes)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Rapid Filters Section -->
+        <section class="section" id="filters">
+            <div class="card">
+                <h2 class="card-header">Rapid Filters: The Test-Taker's Safety Net</h2>
+                <p style="color: #718096; margin-bottom: 1rem;">Your 6-second defense against wrong answers</p>
+                
+                <!-- Filter Cards -->
+                <div class="card">
+                    <h3>🔍 Filter #1: Baseline vs. Change</h3>
+                    <p><strong>Purpose:</strong> Don't assume problems exist</p>
+                    <p><strong>How to use:</strong> Look for "increased," "worsening," "new" - if no baseline given, need assessment first</p>
+                    <div style="background: #e6fffa; padding: 0.75rem; border-radius: 4px; margin: 0.5rem 0;">
+                        <strong>Example:</strong> "Diabetic patient has blood sugar of 150"<br>
+                        Is this HIGH for this patient? Don't assume!
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>🚫 Filter #2: Absolute Words</h3>
+                    <p><strong>Danger words:</strong> Always, Never, All, None, Only, Every, Must</p>
+                    <p><strong>EXCEPTIONS:</strong> Safety protocols, legal requirements, standard precautions</p>
+                    <div style="background: #fff5f5; padding: 0.75rem; border-radius: 4px; margin: 0.5rem 0;">
+                        See absolute word → Mark suspicious → Check if safety/legal → If not, probably wrong
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>👯 Filter #3: Duplicate Options</h3>
+                    <p><strong>Rule:</strong> If two options say the same thing → BOTH are wrong</p>
+                    <div style="background: #e6fffa; padding: 0.75rem; border-radius: 4px; margin: 0.5rem 0;">
+                        <strong>Example:</strong><br>
+                        A. "Notify physician"<br>
+                        B. "Call the doctor"<br>
+                        → Both out!
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>☂️ Filter #4: Umbrella Option</h3>
+                    <p><strong>What wins:</strong> The most comprehensive answer that covers multiple aspects</p>
+                    <div style="background: #e6fffa; padding: 0.75rem; border-radius: 4px; margin: 0.5rem 0;">
+                        ✗ "Check pulse"<br>
+                        ✓ "Assess circulation, sensation, and movement"
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h3>💝 Filter #5: Client-Centered Language</h3>
+                    <p><strong>Winners:</strong> "Encourage client to...", "Assist patient with...", "Support decision to..."</p>
+                    <p><strong>Losers:</strong> "Nurse will perform...", "Do this for patient..."</p>
+                    <p style="color: var(--danger); font-size: 0.875rem;">EXCEPTION: Emergency situations override this</p>
+                </div>
+                
+                <div class="card">
+                    <h3>🎯 Filter #6: First Instinct Rule</h3>
+                    <div style="background: #faf089; padding: 1rem; border-radius: 8px; text-align: center;">
+                        <strong>Statistics:</strong><br>
+                        First instinct = 75% correct<br>
+                        Changed answers = 55% correct
+                    </div>
+                    <p style="margin-top: 0.5rem;"><strong>About to change?</strong> STOP and ask why!</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Practice Mode Section -->
+        <section class="section" id="practice">
+            <div class="card">
+                <h2 class="card-header">Practice Mode</h2>
+                <p style="color: #718096; margin-bottom: 1rem;">Test your understanding with interactive scenarios</p>
+                
+                <div class="card" style="background: #f7fafc;">
+                    <h3>Sample Question</h3>
+                    <p id="practice-question" style="margin-bottom: 1rem;">A patient with heart failure reports feeling more short of breath than usual. The nurse should:</p>
+                    
+                    <div id="practice-options" style="display: flex; flex-direction: column; gap: 0.5rem;">
+                        <button class="practice-option" onclick="checkAnswer(0)" style="padding: 0.75rem; border: 2px solid #e2e8f0; background: white; border-radius: 8px; text-align: left; cursor: pointer; transition: all 0.3s;">A. Always elevate the head of bed to 90 degrees</button>
+                        <button class="practice-option" onclick="checkAnswer(1)" style="padding: 0.75rem; border: 2px solid #e2e8f0; background: white; border-radius: 8px; text-align: left; cursor: pointer; transition: all 0.3s;">B. Encourage the patient to sit in high-Fowler's position</button>
+                        <button class="practice-option" onclick="checkAnswer(2)" style="padding: 0.75rem; border: 2px solid #e2e8f0; background: white; border-radius: 8px; text-align: left; cursor: pointer; transition: all 0.3s;">C. Immediately administer the PRN Lasix</button>
+                        <button class="practice-option" onclick="checkAnswer(3)" style="padding: 0.75rem; border: 2px solid #e2e8f0; background: white; border-radius: 8px; text-align: left; cursor: pointer; transition: all 0.3s;">D. Elevate the head of the bed</button>
+                    </div>
+                    
+                    <div id="practice-feedback" style="margin-top: 1rem; padding: 1rem; border-radius: 8px; display: none;">
+                        <!-- Feedback will appear here -->
+                    </div>
+                    
+                    <button onclick="nextQuestion()" style="margin-top: 1rem; padding: 0.75rem 1.5rem; background: var(--accent); color: white; border: none; border-radius: 8px; cursor: pointer; display: none;" id="next-button">
+                        Next Question →
+                    </button>
+                </div>
+                
+                <div class="card" style="margin-top: 1rem;">
+                    <h3>Your Progress</h3>
+                    <div style="background: #e2e8f0; height: 20px; border-radius: 10px; overflow: hidden;">
+                        <div id="progress-bar" style="background: var(--success); height: 100%; width: 0%; transition: width 0.3s;"></div>
+                    </div>
+                    <p style="text-align: center; margin-top: 0.5rem;">
+                        <span id="score">0</span> / <span id="total">0</span> Correct
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Quick Actions -->
+    <div class="quick-actions">
+        <button class="fab secondary" onclick="scrollToTop()" title="Scroll to top">↑</button>
+        <button class="fab" onclick="toggleTheme()" title="Toggle theme">🌓</button>
+    </div>
+    
+    <!-- Loading -->
+    <div class="loading" id="loading">
+        <div class="loading-spinner"></div>
+    </div>
+    
+    <script>
+        // State management
+        let currentSection = 'flowchart';
+        let currentSwipeCard = 0;
+        let practiceScore = 0;
+        let practiceTotal = 0;
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        // Practice questions
+        const practiceQuestions = [
+            {
+                question: "A patient with heart failure reports feeling more short of breath than usual. The nurse should:",
+                options: [
+                    "Always elevate the head of bed to 90 degrees",
+                    "Encourage the patient to sit in high-Fowler's position",
+                    "Immediately administer the PRN Lasix",
+                    "Elevate the head of the bed"
+                ],
+                correct: 1,
+                explanation: "Filter Analysis: A has 'always' (absolute word), B is client-centered, D is duplicate of A concept. B also acknowledges baseline ('more than usual')."
+            },
+            {
+                question: "A mother states her 6-month-old 'won't stop crying.' The nurse should first:",
+                options: [
+                    "Check the baby's diaper",
+                    "Assess for signs of pain or discomfort",
+                    "Take the baby's temperature",
+                    "Give the baby to the mother"
+                ],
+                correct: 1,
+                explanation: "B is an umbrella option that covers multiple assessments. Stack #4 applies - assess before specific interventions."
+            }
+        ];
+        
+        let currentQuestionIndex = 0;
+        
+        // Navigation functions
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Update nav items
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // Update sidebar items
+            document.querySelectorAll('.sidebar-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            currentSection = sectionId;
+            
+            // Close mobile menu
+            if (window.innerWidth <= 768) {
+                document.getElementById('navMenu').classList.remove('active');
+                document.querySelector('.menu-toggle').classList.remove('active');
+            }
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+        
+        function toggleMenu() {
+            const menu = document.getElementById('navMenu');
+            const toggle = document.querySelector('.menu-toggle');
+            menu.classList.toggle('active');
+            toggle.classList.toggle('active');
+        }
+        
+        function toggleCollapse(element) {
+            element.classList.toggle('collapsed');
+            const content = element.nextElementSibling;
+            content.classList.toggle('collapsed');
+        }
+        
+        function highlightSection(type) {
+            const sections = {
+                'assessment': 'assessment-section',
+                'priority': 'priority-section',
+                'implementation': 'implementation-section',
+                'evaluation': 'evaluation-section',
+                'ordered': 'ordered-section'
+            };
+            
+            const section = document.getElementById(sections[type]);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                section.style.animation = 'pulse 1s ease-in-out';
+                setTimeout(() => {
+                    section.style.animation = '';
+                }, 1000);
+            }
+        }
+        
+        // Sidebar functions
+        function openSidebar() {
+            document.getElementById('sidebar').classList.add('active');
+            document.getElementById('overlay').classList.add('active');
+        }
+        
+        function closeSidebar() {
+            document.getElementById('sidebar').classList.remove('active');
+            document.getElementById('overlay').classList.remove('active');
+        }
+        
+        // Swipe functionality
+        function initSwipe() {
+            const container = document.querySelector('.swipe-container');
+            if (!container) return;
+            
+            container.addEventListener('touchstart', handleTouchStart, { passive: true });
+            container.addEventListener('touchend', handleTouchEnd, { passive: true });
+        }
+        
+        function handleTouchStart(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        }
+        
+        function handleTouchEnd(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }
+        
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0 && currentSwipeCard < 2) {
+                    currentSwipeCard++;
+                } else if (diff < 0 && currentSwipeCard > 0) {
+                    currentSwipeCard--;
+                }
+                updateSwipeView();
+            }
+        }
+        
+        function swipeToCard(index) {
+            currentSwipeCard = index;
+            updateSwipeView();
+        }
+        
+        function updateSwipeView() {
+            const wrapper = document.querySelector('.swipe-wrapper');
+            if (wrapper) {
+                wrapper.style.transform = `translateX(-${currentSwipeCard * 100}%)`;
+            }
+            
+            // Update dots
+            document.querySelectorAll('.swipe-dot').forEach((dot, index) => {
+                if (index === currentSwipeCard) {
+                    dot.style.background = 'var(--accent)';
+                    dot.style.width = '24px';
+                    dot.style.borderRadius = '4px';
+                } else {
+                    dot.style.background = '#cbd5e0';
+                    dot.style.width = '8px';
+                    dot.style.borderRadius = '50%';
+                }
+            });
+        }
+        
+        // Practice mode functions
+        function checkAnswer(selected) {
+            const options = document.querySelectorAll('.practice-option');
+            const feedback = document.getElementById('practice-feedback');
+            const currentQuestion = practiceQuestions[currentQuestionIndex];
+            
+            practiceTotal++;
+            
+            // Disable all options
+            options.forEach(option => {
+                option.disabled = true;
+                option.style.cursor = 'default';
+            });
+            
+            // Show correct/incorrect
+            if (selected === currentQuestion.correct) {
+                options[selected].style.background = '#d4f1d4';
+                options[selected].style.borderColor = '#5cb85c';
+                practiceScore++;
+                feedback.innerHTML = `<strong style="color: var(--success);">✓ Correct!</strong><br>${currentQuestion.explanation}`;
+                feedback.style.background = '#d4f1d4';
+            } else {
+                options[selected].style.background = '#ffe6e6';
+                options[selected].style.borderColor = '#d9534f';
+                options[currentQuestion.correct].style.background = '#d4f1d4';
+                options[currentQuestion.correct].style.borderColor = '#5cb85c';
+                feedback.innerHTML = `<strong style="color: var(--danger);">✗ Incorrect</strong><br>${currentQuestion.explanation}`;
+                feedback.style.background = '#ffe6e6';
+            }
+            
+            feedback.style.display = 'block';
+            document.getElementById('next-button').style.display = 'block';
+            
+            // Update progress
+            updateProgress();
+        }
+        
+        function nextQuestion() {
+            currentQuestionIndex = (currentQuestionIndex + 1) % practiceQuestions.length;
+            loadQuestion();
+        }
+        
+        function loadQuestion() {
+            const question = practiceQuestions[currentQuestionIndex];
+            document.getElementById('practice-question').textContent = question.question;
+            
+            const options = document.querySelectorAll('.practice-option');
+            options.forEach((option, index) => {
+                option.textContent = String.fromCharCode(65 + index) + '. ' + question.options[index];
+                option.disabled = false;
+                option.style.cursor = 'pointer';
+                option.style.background = 'white';
+                option.style.borderColor = '#e2e8f0';
+            });
+            
+            document.getElementById('practice-feedback').style.display = 'none';
+            document.getElementById('next-button').style.display = 'none';
+        }
+        
+        function updateProgress() {
+            document.getElementById('score').textContent = practiceScore;
+            document.getElementById('total').textContent = practiceTotal;
+            const percentage = practiceTotal > 0 ? (practiceScore / practiceTotal) * 100 : 0;
+            document.getElementById('progress-bar').style.width = percentage + '%';
+        }
+        
+        // Utility functions
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        function toggleTheme() {
+            // Simple theme toggle - can be expanded
+            document.body.classList.toggle('dark-theme');
+        }
+        
+        // Add pulse animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes pulse {
+                0% { box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.4); }
+                70% { box-shadow: 0 0 0 10px rgba(102, 126, 234, 0); }
+                100% { box-shadow: 0 0 0 0 rgba(102, 126, 234, 0); }
+            }
+        `;
+        document.head.appendChild(style);
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            initSwipe();
+            loadQuestion();
+            
+            // Add keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft' && currentSwipeCard > 0) {
+                    swipeToCard(currentSwipeCard - 1);
+                } else if (e.key === 'ArrowRight' && currentSwipeCard < 2) {
+                    swipeToCard(currentSwipeCard + 1);
+                }
+            });
+            
+            // Handle window resize
+            let resizeTimer;
+            window.addEventListener('resize', () => {
+                clearTimeout(resizeTimer);
+                resizeTimer = setTimeout(() => {
+                    if (window.innerWidth > 768) {
+                        document.getElementById('navMenu').classList.remove('active');
+                        document.querySelector('.menu-toggle').classList.remove('active');
+                    }
+                }, 250);
+            });
+        });
+    </script>
+
+</body></html>

@@ -364,6 +364,20 @@ Best performance on:
 
 MIT License - See LICENSE file
 
+## Reference Materials
+
+### Online Resources (via GitHub Pages)
+Once GitHub Pages is enabled, access these at: https://mathewmoslow.github.io/thinkinstacksmethod/
+
+- **Complete TISM Guide**: Interactive web guide with examples
+- **Pocket Reference Card**: Print-ready card for clinical use
+- **Research Paper**: Full academic validation paper
+
+### Quick Reference Files
+- `/docs/reference-cards/tism-complete-guide.html` - Full interactive guide
+- `/docs/reference-cards/tism-pocket-card.html` - Printable pocket card
+- `/docs/index.html` - Resource landing page
+
 ## Support
 
 - GitHub Issues: https://github.com/Mathewmoslow/thinkinstacksmethod/issues
