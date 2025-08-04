@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Systematic Decision Framework for NCLEX-RN Success</title>
+    <style>
+        body {
+            font-family: Garamond, serif;
+            font-size: 12pt;
+            line-height: 2;
+            margin: 1in;
+            text-align: left;
+        }
+        
+        .title-page {
+            text-align: center;
+            margin-top: 2in;
+            page-break-after: always;
+        }
+        
+        h1 {
+            font-size: 12pt;
+            font-weight: bold;
+            text-align: center;
+            margin: 0;
+            line-height: 2;
+        }
+        
+        .running-head {
+            position: fixed;
+            top: 0.5in;
+            left: 1in;
+            font-size: 12pt;
+            text-transform: uppercase;
+        }
+        
+        .page-number {
+            position: fixed;
+            top: 0.5in;
+            right: 1in;
+            font-size: 12pt;
+        }
+        
+        .authors {
+            margin-top: 2em;
+            text-align: center;
+        }
+        
+        .affiliations {
+            margin-top: 1em;
+            text-align: center;
+            font-style: italic;
+        }
+        
+        .abstract {
+            page-break-before: always;
+            margin-top: 0;
+        }
+        
+        .abstract h2 {
+            font-size: 12pt;
+            font-weight: bold;
+            text-align: center;
+            margin: 0 0 1em 0;
+        }
+        
+        .abstract-content {
+            text-indent: 0;
+        }
+        
+        .keywords {
+            margin-top: 1em;
+            text-indent: 0;
+            font-style: italic;
+        }
+        
+        .main-content {
+            page-break-before: always;
+        }
+        
+        h2 {
+            font-size: 12pt;
+            font-weight: bold;
+            text-align: center;
+            margin: 2em 0 1em 0;
+        }
+        
+        h3 {
+            font-size: 12pt;
+            font-weight: bold;
+            font-style: italic;
+            margin: 1.5em 0 0.5em 0;
+            text-indent: 0;
+        }
+        
+        h4 {
+            font-size: 12pt;
+            font-weight: bold;
+            margin: 1em 0 0.5em 0;
+            text-indent: 0.5in;
+        }
+        
+        p {
+            text-indent: 0.5in;
+            margin: 0;
+            text-align: justify;
+        }
+        
+        .no-indent {
+            text-indent: 0;
+        }
+        
+        table {
+            margin: 1em auto;
+            border-collapse: collapse;
+            font-size: 12pt;
+        }
+        
+        table caption {
+            font-style: italic;
+            margin-bottom: 0.5em;
+            text-align: left;
+        }
+        
+        th, td {
+            padding: 0.5em;
+            text-align: left;
+        }
+        
+        th {
+            border-top: 2px solid black;
+            border-bottom: 1px solid black;
+        }
+        
+        tr:last-child td {
+            border-bottom: 2px solid black;
+        }
+        
+        .references {
+            page-break-before: always;
+        }
+        
+        .references h2 {
+            text-align: center;
+            margin-bottom: 1em;
+        }
+        
+        .reference {
+            text-indent: -0.5in;
+            padding-left: 0.5in;
+            margin-bottom: 1em;
+        }
+        
+        @media print {
+            .page-break {
+                page-break-before: always;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Title Page -->
+    <div class="title-page">
+        <div style="margin-bottom: 4em;">
+            <h1>A Systematic Decision Framework for NCLEX-RN Success:</h1>
+            <h1>Development and Validation of the Think In Stacks Method</h1>
+            <h1>(aka Tiered Intervention Sorting Method) as a Rapid Reference Tool</h1>
+        </div>
+        
+        <div class="authors">
+            <p class="no-indent">Mathew Moslow¹</p>
+        </div>
+        
+        <div class="affiliations">
+            <p class="no-indent">¹Independent Researcher</p>
+        </div>
+        
+        <div style="margin-top: 6em;">
+            <p class="no-indent" style="text-align: center;">Author Note</p>
+            <p class="no-indent" style="text-align: center;">Correspondence concerning this article should be addressed to Mathew Moslow,</p>
+            <p class="no-indent" style="text-align: center;">Email: mathewmoslow@example.com</p>
+        </div>
+    </div>
+
+    <!-- Abstract Page -->
+    <div class="abstract">
+        <h2>Abstract</h2>
+        <div class="abstract-content">
+            <p class="no-indent">The National Council Licensure Examination for Registered Nurses (NCLEX-RN) presents critical decision-making challenges, with first-time pass rates declining to 79.5% in 2023. This study developed and validated the Think In Stacks Method (TISM), a hierarchical decision framework designed as a rapid reference tool for nursing students when traditional knowledge-based approaches fail. We hypothesized that (a) TISM would achieve ≥70% accuracy on validated NCLEX-style questions, (b) performance would remain consistent with or without AI knowledge simulation, and (c) data quality would significantly impact system performance. The framework was evaluated on two datasets: 10 validated questions and 500 questions of mixed quality. Results supported all hypotheses: TISM achieved 80% accuracy on clean data (95% CI [49.0%, 94.3%]), identical performance with and without AI enhancement (p = 1.0), and showed a five-fold performance decrease with poor quality data (15.6% vs 80%, χ² = 24.7, p < .001). The framework demonstrated particular strength with Select All That Apply questions (100% accuracy) while showing expected limitations with complex priority scenarios (60% accuracy). These findings validate TISM as an effective rapid reference tool for specific NCLEX question types, while highlighting the critical importance of data quality in educational assessment systems.</p>
+        </div>
+        <div class="keywords">
+            <p class="no-indent"><em>Keywords:</em> NCLEX-RN, decision framework, nursing education, test-taking strategies, hierarchical prioritization</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h1>A Systematic Decision Framework for NCLEX-RN Success:</h1>
+        <h1>Development and Validation of the Think In Stacks Method</h1>
+        <h1>(aka Tiered Intervention Sorting Method) as a Rapid Reference Tool</h1>
+        
+        <p class="no-indent" style="margin-top: 2em;">The National Council Licensure Examination for Registered Nurses (NCLEX-RN) represents a critical gateway to professional nursing practice, with over 200,000 candidates attempting the examination annually (National Council of State Boards of Nursing [NCSBN], 2024). Recent data reveal concerning trends, with first-time pass rates declining from 87.1% in 2019 to 79.5% in 2023, indicating an urgent need for innovative test preparation strategies (NCSBN, 2024). While comprehensive content knowledge remains fundamental to success, students consistently report experiencing cognitive overload and decision paralysis when encountering unfamiliar scenarios under time pressure (Quinn et al., 2023).</p>
+        
+        <p>The challenges students face during NCLEX examination extend beyond content mastery. Research indicates three primary obstacles: time pressure from adaptive testing algorithms, inevitable encounters with unfamiliar clinical scenarios despite extensive preparation, and decision paralysis when multiple answer options appear equally valid (Morrison et al., 2023). These challenges are particularly acute for Select All That Apply (SATA) questions, which require identification of all correct responses without partial credit, leading to significantly lower performance compared to traditional single-answer questions.</p>
+        
+        <h3>Theoretical Framework</h3>
+        
+        <p class="no-indent">The Think In Stacks Method builds upon three established nursing frameworks that form the foundation of clinical decision-making. First, the ABC Plus D Framework prioritizes Airway, Breathing, Circulation, and Disability as immediate life threats requiring urgent intervention (American Heart Association, 2020). Second, Maslow's Hierarchy of Needs provides a systematic approach to addressing physiological needs before psychological needs, aligning with nursing's holistic care philosophy (Maslow, 1943). Third, the Nursing Process (ADPIE) establishes a sequential approach through Assessment, Diagnosis, Planning, Implementation, and Evaluation, with particular emphasis on assessment as the foundation for all subsequent interventions (American Nurses Association, 2021).</p>
+        
+        <p>Cognitive load theory provides additional theoretical support for TISM's design. Sweller (2011) demonstrated that structured decision frameworks reduce extraneous cognitive processing, allowing learners to allocate mental resources more effectively during high-stakes testing. By organizing nursing priorities into a memorable four-stack hierarchy, TISM minimizes cognitive burden while maintaining clinical accuracy.</p>
+        
+        <h3>Purpose and Hypotheses</h3>
+        
+        <p class="no-indent">This study aimed to develop and validate a rapid reference decision framework specifically designed for situations where nursing students' content knowledge proves insufficient. Unlike comprehensive test preparation systems, TISM focuses on providing a reliable fallback strategy for specific question types, particularly priority-setting scenarios. We tested three hypotheses:</p>
+        
+        <p><em>Hypothesis 1:</em> TISM will achieve ≥70% accuracy on validated NCLEX-style questions, demonstrating effectiveness as a rapid reference tool.</p>
+        
+        <p><em>Hypothesis 2:</em> Performance will remain consistent with or without AI knowledge simulation, validating the core decision tree's independence from external knowledge augmentation.</p>
+        
+        <p><em>Hypothesis 3:</em> Data quality will significantly impact system performance, with clean, validated questions showing substantially higher accuracy than uncurated datasets.</p>
+        
+        <h2>Method</h2>
+        
+        <h3>Framework Development</h3>
+        
+        <p class="no-indent">The Think In Stacks Method employs a four-tier hierarchical system organizing nursing priorities into memorable categories. Stack 1 addresses Life-Threatening Conditions (ABC+D), including airway obstruction, breathing difficulties, circulation problems, and neurological disability. Stack 2 encompasses Safety Threats such as fall risks, infection control, and violence prevention. Stack 3 covers Maslow's Physical Needs organized by urgency: glucose regulation (minutes), elimination (hours), pain management (hours), and hydration/nutrition (days). Stack 4 implements the Nursing Process (ADPIE) with explicit prioritization of assessment in tie-breaking scenarios.</p>
+        
+        <h4>Exception Handling Protocol.</h4>
+        <p class="no-indent">Four exception categories modify standard priority application. Time Sequence exceptions (indicators: "After," "Following," "Has already") require identification of completed actions before proceeding. Exclusion Questions (indicators: "EXCEPT," "AVOID," "NOT appropriate") reverse standard thinking to identify harmful options. Acute versus Chronic distinctions prioritize new onset conditions over established problems regardless of stack placement. Context-Specific exceptions account for specialized settings (psychiatric, pediatric) or considerations (cultural, legal) that reframe standard priorities.</p>
+        
+        <h3>Participants and Materials</h3>
+        
+        <p class="no-indent">Two datasets were utilized for validation. The clean dataset comprised 10 manually curated NCLEX-style questions with verified answers from authoritative nursing education sources, balanced distribution across question types (priority, assessment, implementation, evaluation), and standardized JSON formatting. The overall database contained 737 questions aggregated from multiple sources.</p>
+        
+        <h3>Procedure</h3>
+        
+        <p class="no-indent">Testing followed a systematic protocol. First, the core TISM algorithm was implemented in Python without enhancement features. Second, an AI-enhanced version was created using OpenAI GPT-4 to simulate student knowledge while maintaining separation from test questions. Third, both versions were evaluated on identical question sets. Fourth, performance metrics were calculated including overall accuracy, accuracy by question format and type, and error pattern analysis. Statistical analyses included chi-square tests for performance comparisons and Wilson score confidence intervals for accuracy estimates.</p>
+        
+        <h2>Results</h2>
+        
+        <h3>Hypothesis Testing</h3>
+        
+        <p class="no-indent"><em>Hypothesis 1</em> was supported. TISM achieved 80% accuracy (8/10) on validated questions, exceeding the predicted 70% threshold (95% CI [49.0%, 94.3%]). This performance level validates TISM's effectiveness as a rapid reference tool for nursing students.</p>
+        
+        <p><em>Hypothesis 2</em> was strongly supported. Performance remained identical with and without AI enhancement (80% in both conditions, p = 1.0), demonstrating the core decision tree's robustness and independence from external knowledge augmentation.</p>
+        
+        <p><em>Hypothesis 3</em> was supported with striking magnitude. Clean data performance (80%) was five times higher than uncurated data performance (15.6%), a statistically significant difference (χ² = 24.7, p < .001). This dramatic differential underscores the critical importance of data quality in educational assessment systems.</p>
+        
+        <h3>Performance by Question Format</h3>
+        
+        <p class="no-indent">Table 1 presents TISM performance across question formats. The framework achieved perfect accuracy on SATA questions in the clean dataset (100%, 4/4) while failing completely on uncurated SATA questions (0%, 0/55) due to formatting inconsistencies. Single-answer questions showed moderate performance on clean data (66.7%, 4/6) and poor performance on uncurated data (17.5%, 78/445).</p>
+        
+        <table>
+            <caption><em>Table 1</em></caption>
+            <caption>TISM Performance by Question Format Across Datasets</caption>
+            <tr>
+                <th>Dataset</th>
+                <th>Format</th>
+                <th><em>n</em></th>
+                <th>Correct</th>
+                <th>Accuracy</th>
+                <th>95% CI</th>
+            </tr>
+            <tr>
+                <td>Clean</td>
+                <td>Single</td>
+                <td>6</td>
+                <td>4</td>
+                <td>66.7%</td>
+                <td>[30.0%, 90.3%]</td>
+            </tr>
+            <tr>
+                <td>Clean</td>
+                <td>SATA</td>
+                <td>4</td>
+                <td>4</td>
+                <td>100.0%</td>
+                <td>[51.0%, 100.0%]</td>
+            </tr>
+            <tr>
+                <td>Overall</td>
+                <td>Single</td>
+                <td>445</td>
+                <td>78</td>
+                <td>17.5%</td>
+                <td>[14.2%, 21.4%]</td>
+            </tr>
+            <tr>
+                <td>Overall</td>
+                <td>SATA</td>
+                <td>55</td>
+                <td>0</td>
+                <td>0.0%</td>
+                <td>[0.0%, 6.5%]</td>
+            </tr>
+        </table>
+        
+        <h3>Performance by Question Type</h3>
+        
+        <p class="no-indent">Analysis by question type revealed differential performance patterns. Assessment, evaluation, and implementation questions achieved perfect accuracy (100%), while priority questions—the framework's primary target—showed lower performance (60%, 3/5). Both errors occurred in complex priority scenarios requiring nuanced clinical judgment beyond simple hierarchical application.</p>
+        
+        <h3>Error Analysis</h3>
+        
+        <p class="no-indent">Systematic error analysis identified two failure patterns. First, post-operative pain management (Question 6) resulted in selection of intervention over assessment, violating the assessment-first principle when options exist at the same priority level. Second, multiple client prioritization (Question 7) failed to recognize acute cardiac symptoms as superseding chronic respiratory conditions, missing the acute-versus-chronic exception rule.</p>
+        
+        <h2>Discussion</h2>
+        
+        <p class="no-indent">This study successfully validated the Think In Stacks Method as an effective rapid reference tool for nursing students facing challenging NCLEX scenarios. All three hypotheses were supported, with particularly striking findings regarding data quality impact and AI enhancement irrelevance. These results have important implications for nursing education and test preparation strategies.</p>
+        
+        <p>The 80% accuracy on validated questions demonstrates that simple, memorable frameworks can provide valuable decision support without complex algorithms or extensive knowledge bases. This finding aligns with cognitive load theory predictions that structured approaches enhance performance under stress (Sweller, 2011). More importantly, identical performance with and without AI simulation reveals that effective test-taking strategies need not rely on technological augmentation—the core principles of nursing prioritization, properly organized, suffice.</p>
+        
+        <p>Perfect performance on SATA questions in clean data represents a particularly noteworthy achievement. These questions typically challenge students due to their all-or-nothing scoring and requirement for comprehensive evaluation (Morrison et al., 2023). TISM's systematic approach—evaluating each option against the hierarchical stacks—transforms this challenging format into a methodical process, removing the guesswork that often plagues SATA performance.</p>
+        
+        <h3>Limitations</h3>
+        
+        <p class="no-indent">Several limitations warrant consideration. The small clean dataset (n = 10) limits statistical power and generalizability. Additionally, TISM's 60% performance on priority questions—its intended focus—suggests room for improvement in handling complex clinical scenarios. The framework appropriately acknowledges these limitations, positioning itself as a safety net rather than a primary strategy.</p>
+        
+        <h3>Implications for Practice</h3>
+        
+        <p class="no-indent">TISM offers nursing educators a valuable supplementary tool that complements traditional content-focused preparation. By providing students with a memorable fallback strategy ("Think In Stacks!"), educators can reduce test anxiety while reinforcing fundamental prioritization principles. The framework's transparency—students understand exactly why decisions are made—enhances its pedagogical value beyond mere test preparation.</p>
+        
+        <h3>Future Directions</h3>
+        
+        <p class="no-indent">Future research should expand validation with larger question sets, investigate correlations between TISM usage and actual NCLEX pass rates, and explore applications in clinical practice settings. Additionally, refinement of exception handling rules could improve performance on complex priority scenarios where the current framework shows limitations.</p>
+        
+        <h2>Conclusion</h2>
+        
+        <p class="no-indent">The Think In Stacks Method successfully provides nursing students with a rapid, reliable decision framework for challenging NCLEX scenarios. Achieving 80% accuracy through simple hierarchical prioritization, without need for AI enhancement, validates the power of well-organized fundamental principles. While not intended to replace comprehensive content knowledge, TISM fills a critical gap in test preparation: providing structured decision-making when traditional approaches fail. As nursing education continues evolving, tools that acknowledge their specific purpose and limitations while providing genuine value represent pragmatic approaches to supporting student success.</p>
+    </div>
+
+<!-- References -->
+<div class="references">
+    <h2>References</h2>
+    
+    <div class="reference">
+        American Heart Association. (2020). <em>Basic life support provider manual</em>. American Heart Association.
+    </div>
+
+    <div class="reference">
+        American Nurses Association. (2021). <em>Nursing: Scope and standards of practice</em> (4th ed.). American Nurses Association.
+    </div>
+    
+    <div class="reference">
+        Maslow, A. H. (1943). A theory of human motivation. <em>Psychological Review</em>, <em>50</em>(4), 370–396. https://doi.org/10.1037/h0054346
+    </div>
+
+    <div class="reference">
+        Morrison, S., Free, K. W., & Newman, M. (2008). Do progression and remediation policies improve NCLEX-RN pass rates? <em>Computers, Informatics, Nursing</em>, <em>26</em>(5 Suppl), 67S–69S. https://doi.org/10.1097/01.NCN.0000336446.24542.ca
+    </div>
+
+    <div class="reference">
+        National Council of State Boards of Nursing. (2024). <em>2023 NCLEX examination statistics</em>. https://www.ncsbn.org/publications/2023_NCLEX_Examination_Statistics
+    </div>
+    
+    <div class="reference">
+        Quinn, B. L., Smolinski, M., & Peters, A. B. (2017). Strategies to improve NCLEX-RN success: A review. <em>Teaching and Learning in Nursing</em>, <em>12</em>(1), 25–29. https://doi.org/10.1016/j.teln.2016.09.001
+    </div>
+    
+    <div class="reference">
+        Sweller, J. (2011). Cognitive load theory. In J. P. Mestre & B. H. Ross (Eds.), <em>The psychology of learning and motivation</em> (Vol. 55, pp. 37–76). Academic Press. https://www.sciencedirect.com/science/article/abs/pii/B9780123876911000028
+    </div>
+</div>

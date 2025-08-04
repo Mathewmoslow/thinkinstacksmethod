@@ -1,0 +1,165 @@
+[
+  {
+    "id": "clean_1",
+    "stem": "A client is admitted with acute respiratory distress, SpO2 82%, and audible wheezing. Which action should the nurse take FIRST?",
+    "options": {
+      "A": "Notify the healthcare provider",
+      "B": "Position client in high-Fowlers",
+      "C": "Obtain arterial blood gases",
+      "D": "Document respiratory status"
+    },
+    "correct_answers": [
+      "B"
+    ],
+    "format": "single",
+    "question_type": "priority"
+  },
+  {
+    "id": "clean_2",
+    "stem": "A nurse finds a client unresponsive with no palpable pulse. What is the nurse's PRIORITY action?",
+    "options": {
+      "A": "Check blood glucose level",
+      "B": "Begin chest compressions",
+      "C": "Call for help",
+      "D": "Assess pupils"
+    },
+    "correct_answers": [
+      "B"
+    ],
+    "format": "single",
+    "question_type": "priority"
+  },
+  {
+    "id": "clean_3",
+    "stem": "A client with heart failure needs discharge teaching. Which statements indicate understanding? Select all that apply.",
+    "options": {
+      "A": "I will weigh myself daily at the same time",
+      "B": "I can skip my diuretic if I feel better",
+      "C": "I will limit my fluid intake as prescribed",
+      "D": "I should report weight gain of 3 pounds in 2 days",
+      "E": "I will increase salt to prevent low sodium"
+    },
+    "correct_answers": [
+      "C",
+      "D",
+      "A"
+    ],
+    "format": "sata",
+    "question_type": "evaluation"
+  },
+  {
+    "id": "clean_4",
+    "stem": "A diabetic client reports feeling shaky, sweaty, and confused. Blood glucose is 52 mg/dL. What should the nurse do FIRST?",
+    "options": {
+      "A": "Give 15 grams of quick-acting carbohydrate",
+      "B": "Check vital signs",
+      "C": "Notify the physician",
+      "D": "Document the findings"
+    },
+    "correct_answers": [
+      "A"
+    ],
+    "format": "single",
+    "question_type": "priority"
+  },
+  {
+    "id": "clean_5",
+    "stem": "Which nursing interventions are appropriate for preventing falls? Select all that apply.",
+    "options": {
+      "A": "Keep bed in lowest position",
+      "B": "Use restraints for all confused patients",
+      "C": "Ensure call bell is within reach",
+      "D": "Provide non-slip footwear",
+      "E": "Leave side rails up at all times"
+    },
+    "correct_answers": [
+      "C",
+      "D",
+      "A"
+    ],
+    "format": "sata",
+    "question_type": "implementation"
+  },
+  {
+    "id": "clean_6",
+    "stem": "A post-operative client complains of 8/10 abdominal pain. What is the nurse's FIRST action?",
+    "options": {
+      "A": "Assess the surgical site",
+      "B": "Administer prescribed pain medication",
+      "C": "Reposition the client",
+      "D": "Document pain level"
+    },
+    "correct_answers": [
+      "A"
+    ],
+    "format": "single",
+    "question_type": "priority"
+  },
+  {
+    "id": "clean_7",
+    "stem": "A nurse is caring for multiple clients. Which client should be assessed FIRST?",
+    "options": {
+      "A": "Client with COPD, SpO2 88% on room air",
+      "B": "Client requesting pain medication for 5/10 pain",
+      "C": "Client with new onset chest pain and diaphoresis",
+      "D": "Client scheduled for discharge in 2 hours"
+    },
+    "correct_answers": [
+      "C"
+    ],
+    "format": "single",
+    "question_type": "priority"
+  },
+  {
+    "id": "clean_8",
+    "stem": "What indicates effective teaching about insulin administration? Select all that apply.",
+    "options": {
+      "A": "I will rotate injection sites",
+      "B": "I can reuse needles to save money",
+      "C": "I will check my blood sugar before injecting",
+      "D": "I should inject into the same spot for consistency",
+      "E": "I will store open vials at room temperature"
+    },
+    "correct_answers": [
+      "C",
+      "A",
+      "E"
+    ],
+    "format": "sata",
+    "question_type": "evaluation"
+  },
+  {
+    "id": "clean_9",
+    "stem": "A client is choking and cannot cough or speak. What should the nurse do?",
+    "options": {
+      "A": "Perform abdominal thrusts",
+      "B": "Call for help first",
+      "C": "Give water to drink",
+      "D": "Perform back blows only"
+    },
+    "correct_answers": [
+      "A"
+    ],
+    "format": "single",
+    "question_type": "implementation"
+  },
+  {
+    "id": "clean_10",
+    "stem": "For a client with suspected stroke, which assessments are priorities? Select all that apply.",
+    "options": {
+      "A": "Time of symptom onset",
+      "B": "Blood glucose level",
+      "C": "Facial symmetry",
+      "D": "Dietary preferences",
+      "E": "Arm strength/drift"
+    },
+    "correct_answers": [
+      "C",
+      "B",
+      "A",
+      "E"
+    ],
+    "format": "sata",
+    "question_type": "assessment"
+  }
+]

@@ -1,0 +1,1064 @@
+[
+  {
+    "id": "clean_1",
+    "stem": "A client is admitted with acute respiratory distress, SpO2 82%, and audible wheezing. Which action should the nurse take FIRST?",
+    "options": {
+      "A": "Notify the healthcare provider",
+      "B": "Position client in high-Fowlers",
+      "C": "Obtain arterial blood gases",
+      "D": "Document respiratory status"
+    },
+    "correct_answers": [
+      "B"
+    ],
+    "format": "single",
+    "question_type": "priority"
+  },
+  {
+    "id": "clean_2",
+    "stem": "A nurse finds a client unresponsive with no palpable pulse. What is the nurse's PRIORITY action?",
+    "options": {
+      "A": "Check blood glucose level",
+      "B": "Begin chest compressions",
+      "C": "Call for help",
+      "D": "Assess pupils"
+    },
+    "correct_answers": [
+      "B"
+    ],
+    "format": "single",
+    "question_type": "priority"
+  },
+  {
+    "id": "clean_4",
+    "stem": "A diabetic client reports feeling shaky, sweaty, and confused. Blood glucose is 52 mg/dL. What should the nurse do FIRST?",
+    "options": {
+      "A": "Give 15 grams of quick-acting carbohydrate",
+      "B": "Check vital signs",
+      "C": "Notify the physician",
+      "D": "Document the findings"
+    },
+    "correct_answers": [
+      "A"
+    ],
+    "format": "single",
+    "question_type": "priority"
+  },
+  {
+    "id": "clean_5",
+    "stem": "Which nursing interventions are appropriate for preventing falls? Select all that apply.",
+    "options": {
+      "A": "Keep bed in lowest position",
+      "B": "Use restraints for all confused patients",
+      "C": "Ensure call bell is within reach",
+      "D": "Provide non-slip footwear",
+      "E": "Leave side rails up at all times"
+    },
+    "correct_answers": [
+      "D",
+      "C",
+      "A"
+    ],
+    "format": "sata",
+    "question_type": "implementation"
+  },
+  {
+    "id": "clean_6",
+    "stem": "A post-operative client complains of 8/10 abdominal pain. What is the nurse's FIRST action?",
+    "options": {
+      "A": "Assess the surgical site",
+      "B": "Administer prescribed pain medication",
+      "C": "Reposition the client",
+      "D": "Document pain level"
+    },
+    "correct_answers": [
+      "A"
+    ],
+    "format": "single",
+    "question_type": "priority"
+  },
+  {
+    "id": "clean_7",
+    "stem": "A nurse is caring for multiple clients. Which client should be assessed FIRST?",
+    "options": {
+      "A": "Client with COPD, SpO2 88% on room air",
+      "B": "Client requesting pain medication for 5/10 pain",
+      "C": "Client with new onset chest pain and diaphoresis",
+      "D": "Client scheduled for discharge in 2 hours"
+    },
+    "correct_answers": [
+      "C"
+    ],
+    "format": "single",
+    "question_type": "priority"
+  },
+  {
+    "id": "clean_9",
+    "stem": "A client is choking and cannot cough or speak. What should the nurse do?",
+    "options": {
+      "A": "Perform abdominal thrusts",
+      "B": "Call for help first",
+      "C": "Give water to drink",
+      "D": "Perform back blows only"
+    },
+    "correct_answers": [
+      "A"
+    ],
+    "format": "single",
+    "question_type": "implementation"
+  },
+  {
+    "id": "clean_10",
+    "stem": "For a client with suspected stroke, which assessments are priorities? Select all that apply.",
+    "options": {
+      "A": "Time of symptom onset",
+      "B": "Blood glucose level",
+      "C": "Facial symmetry",
+      "D": "Dietary preferences",
+      "E": "Arm strength/drift"
+    },
+    "correct_answers": [
+      "E",
+      "B",
+      "C",
+      "A"
+    ],
+    "format": "sata",
+    "question_type": "assessment"
+  },
+  {
+    "id": "0001",
+    "stem": "A client complains of a constant pulsating headache, sensitivity to light, and nausea. The provider prescribes a medication classified as a serotonin receptor agonist. Which instruction is most important before administering this medication?",
+    "options": {
+      "A": "Passive ideation without method",
+      "B": "Suicidal thoughts with method but no specific intent or plan",
+      "C": "Suicidal intent with a specific plan",
+      "D": "Recent suicidal behavior"
+    },
+    "correct_answers": [
+      "B"
+    ],
+    "format": "single",
+    "question_type": "priority"
+  },
+  {
+    "id": "0002",
+    "stem": "A client with severe, watery diarrhea for three days is prescribed an antidiarrheal opioid derivative. Which finding would prompt the nurse to hold the medication and contact the provider?",
+    "options": {
+      "A": "Temperature of 38.5\u00b0C (101.3\u00b0F) and bloody stools",
+      "B": "Mild abdominal cramps with relief after medication",
+      "C": "Client's request to take with food",
+      "D": "Slight dizziness upon standing"
+    },
+    "correct_answers": [
+      "A"
+    ],
+    "format": "single",
+    "question_type": "assessment"
+  },
+  {
+    "id": "0003",
+    "stem": "A client with rapid, irregular heartbeats is prescribed a Class II antidysrhythmic (beta-blocker). Which assessment finding would make the nurse question administering the dose?",
+    "options": {
+      "A": "Heart rate of 52 beats per minute",
+      "B": "Respiratory rate of 18 breaths per minute",
+      "C": "Blood pressure of 130/80 mm Hg",
+      "D": "Reports of mild fatigue"
+    },
+    "correct_answers": [
+      "A"
+    ],
+    "format": "single",
+    "question_type": "assessment"
+  },
+  {
+    "id": "0004",
+    "stem": "A client presents with nasal congestion, sneezing, and watery eyes. The provider prescribes a first-generation antihistamine. Which teaching point is most important regarding its side effects?",
+    "options": {
+      "A": "It can cause insomnia; take it early in the day",
+      "B": "Increase fluid intake to avoid thirst",
+      "C": "Use caution when driving due to possible drowsiness",
+      "D": "Avoid taking the medication at bedtime"
+    },
+    "correct_answers": [
+      "C"
+    ],
+    "format": "single",
+    "question_type": "priority"
+  },
+  {
+    "id": "0006",
+    "stem": "A client with sudden onset chest tightness, shortness of breath, and mild tachycardia is given a sublingual medication that dilates coronary arteries. Which assessment finding would cause the nurse to hold further doses?",
+    "options": {
+      "A": "Blood pressure of 88/50 mm Hg",
+      "B": "Headache rating of 5 out of 10",
+      "C": "Respiratory rate of 24 breaths per minute",
+      "D": "Heart rate of 100 beats per minute"
+    },
+    "correct_answers": [
+      "A"
+    ],
+    "format": "single",
+    "question_type": "assessment"
+  },
+  {
+    "id": "0007",
+    "stem": "A client with high blood pressure also experiences cold, pale fingers in chilly environments. The provider prescribes a calcium channel blocker. Which potential adverse effect should the nurse monitor closely in the first weeks of therapy?",
+    "options": {
+      "A": "Productive cough with thick sputum",
+      "B": "Leg swelling and possible peripheral edema",
+      "C": "Tinnitus and hearing loss",
+      "D": "Frequent constipation with rectal bleeding"
+    },
+    "correct_answers": [
+      "B"
+    ],
+    "format": "single",
+    "question_type": "priority"
+  },
+  {
+    "id": "0011",
+    "stem": "A client with congested cough and shortness of breath is started on an inhaled beta-2 agonist. Which finding would prompt the nurse to hold the next dose and alert the provider?",
+    "options": {
+      "A": "Slight tremor in the hands",
+      "B": "Heart rate of 135 beats per minute with palpitations",
+      "C": "Throat irritation and hoarseness",
+      "D": "Mild headache and increased appetite"
+    },
+    "correct_answers": [
+      "B"
+    ],
+    "format": "single",
+    "question_type": "assessment"
+  },
+  {
+    "id": "0012",
+    "stem": "A client with frequent nighttime urination and mild flank pain is prescribed a loop diuretic. Which labs or signs are crucial to monitor during therapy? Select all that apply.",
+    "options": {
+      "A": "Serum potassium levels",
+      "B": "Liver enzymes",
+      "C": "Blood pressure readings",
+      "D": "Urine color changes to pink or red",
+      "E": "Signs of dehydration (e.g., dry mucous membranes, low intake/output)"
+    },
+    "correct_answers": [
+      "E",
+      "C",
+      "A"
+    ],
+    "format": "sata",
+    "question_type": "assessment"
+  },
+  {
+    "id": "0013",
+    "stem": "A client who experiences chest palpitations and anxiety is prescribed a benzodiazepine. Which teaching point is most important to reduce the risk of dependency?",
+    "options": {
+      "A": "Take the medication regularly for at least one year",
+      "B": "Avoid abrupt discontinuation of the medication",
+      "C": "Double the dose if anxiety persists",
+      "D": "Drink grapefruit juice to enhance absorption"
+    },
+    "correct_answers": [
+      "B"
+    ],
+    "format": "single",
+    "question_type": "priority"
+  },
+  {
+    "id": "0017",
+    "stem": "A client with elevated triglycerides and low HDL is prescribed a fibric acid derivative. Which laboratory value is most important to monitor while on this therapy?",
+    "options": {
+      "A": "Platelet count",
+      "B": "Serum potassium",
+      "C": "Liver function tests (LFTs)",
+      "D": "Hemoglobin A1c"
+    },
+    "correct_answers": [
+      "C"
+    ],
+    "format": "single",
+    "question_type": "priority"
+  },
+  {
+    "id": "0020",
+    "stem": "A client with irregular heartbeat and mild heart failure is prescribed digoxin. Which sign indicates possible toxicity, leading the nurse to hold the medication?",
+    "options": {
+      "A": "Visual disturbances such as yellow-tinged vision",
+      "B": "Mild nausea that resolves after eating",
+      "C": "Heart rate of 68 beats per minute",
+      "D": "Increased urinary frequency overnight"
+    },
+    "correct_answers": [
+      "A"
+    ],
+    "format": "single",
+    "question_type": "assessment"
+  },
+  {
+    "id": "0022",
+    "stem": "A client with frequent burning urination and cloudy urine is prescribed a sulfonamide antibiotic. Which nurse instruction is most important?",
+    "options": {
+      "A": "Increase fluid intake to at least 2,000 mL/day",
+      "B": "Avoid wearing sunglasses outdoors",
+      "C": "Take the entire course only if symptoms persist",
+      "D": "Limit exposure to dairy for better absorption"
+    },
+    "correct_answers": [
+      "A"
+    ],
+    "format": "single",
+    "question_type": "priority"
+  },
+  {
+    "id": "0024",
+    "stem": "A client develops mild swelling of the lips and hives within 20 minutes after receiving a new IV antibiotic. Which action should the nurse take first?",
+    "options": {
+      "A": "Slow the infusion and observe for changes",
+      "B": "Stop the infusion and notify the provider immediately",
+      "C": "Administer a bronchodilator nebulizer treatment",
+      "D": "Document the reaction in the client's medical record"
+    },
+    "correct_answers": [
+      "B"
+    ],
+    "format": "single",
+    "question_type": "priority"
+  },
+  {
+    "id": "0025",
+    "stem": "A client with moderate swelling and redness of the lower leg is started on a parenteral anticoagulant to reduce clot progression. Which finding indicates the medication might be contraindicated or needs re-evaluation?",
+    "options": {
+      "A": "Platelet count drops by 50% from the baseline value",
+      "B": "Prothrombin time is slightly above normal",
+      "C": "Mild bruising at the injection sites",
+      "D": "Occasional dizziness upon standing"
+    },
+    "correct_answers": [
+      "A"
+    ],
+    "format": "single",
+    "question_type": "assessment"
+  },
+  {
+    "id": "0026",
+    "stem": "A client with episodes of very high blood pressure is given a vasodilator infusion in the ICU. Which adverse effect is most critical to watch for immediately after initiation?",
+    "options": {
+      "A": "A spike in body temperature above 39\u00b0C",
+      "B": "Severe hypotension and reflex tachycardia",
+      "C": "Urinary frequency every hour",
+      "D": "Peripheral edema developing within minutes"
+    },
+    "correct_answers": [
+      "B"
+    ],
+    "format": "single",
+    "question_type": "priority"
+  },
+  {
+    "id": "0028",
+    "stem": "A client with persistent difficulty falling asleep is prescribed a non-benzodiazepine sleep aid. Which client statement indicates understanding of proper administration?",
+    "options": {
+      "A": "I will take it in the morning to get used to its effects",
+      "B": "I'll set aside 7\u20138 hours for sleep after I take it",
+      "C": "If I awaken at night, I'll take an extra pill",
+      "D": "I'll take it with a large meal to prevent stomach upset"
+    },
+    "correct_answers": [
+      "B"
+    ],
+    "format": "single",
+    "question_type": "assessment"
+  },
+  {
+    "id": "0034",
+    "stem": "A client with acute agitation, restlessness, and disorganized thinking is given an atypical antipsychotic. Which adverse effect would be most urgent for the nurse to report immediately?",
+    "options": {
+      "A": "Mild sedation and dizziness",
+      "B": "Spasms of the neck and face muscles",
+      "C": "Slight weight gain in the first week",
+      "D": "Dry mouth and blurred vision"
+    },
+    "correct_answers": [
+      "B"
+    ],
+    "format": "single",
+    "question_type": "priority"
+  },
+  {
+    "id": "0035",
+    "stem": "A client with moderate joint pain has been taking high-dose NSAIDs daily. Which finding would make the nurse suspect potential NSAID-induced complications? Select all that apply.",
+    "options": {
+      "A": "Black, tarry stools",
+      "B": "Elevated white blood cell count",
+      "C": "Reports of ringing in the ears",
+      "D": "Blood pressure readings trending upward",
+      "E": "Itching at the injection site"
+    },
+    "correct_answers": [
+      "D",
+      "C",
+      "A"
+    ],
+    "format": "sata",
+    "question_type": "assessment"
+  },
+  {
+    "id": "0037",
+    "stem": "A client is admitted with uncontrolled muscle twitching, confusion, and a recent medication change for Parkinson-like symptoms. The nurse suspects excessive dopaminergic medication. What immediate action is best?",
+    "options": {
+      "A": "Administer a bolus of IV fluids to flush the drug",
+      "B": "Hold the next dose and notify the provider of potential toxicity",
+      "C": "Reduce all dietary protein to enhance the drug's absorption",
+      "D": "Encourage the client to rest; muscle twitching is harmless"
+    },
+    "correct_answers": [
+      "B"
+    ],
+    "format": "single",
+    "question_type": "priority"
+  },
+  {
+    "id": "0038",
+    "stem": "A client develops sustained muscle contractions in the jaw and neck after receiving an antiemetic often used postoperatively. Which intervention is the most appropriate?",
+    "options": {
+      "A": "Offer warm compresses to the neck",
+      "B": "Administer a prescribed anticholinergic or antihistamine agent",
+      "C": "Reassure the client that it will pass in a few hours",
+      "D": "Encourage the client to chew gum and move the jaw"
+    },
+    "correct_answers": [
+      "B"
+    ],
+    "format": "single",
+    "question_type": "implementation"
+  },
+  {
+    "id": "0040",
+    "stem": "Which component of the MSE is primarily assessed by observing a client's grooming, dress, and overall physical appearance?",
+    "options": {
+      "A": "Thought content",
+      "B": "Orientation",
+      "C": "Appearance",
+      "D": "Insight"
+    },
+    "correct_answers": [
+      "C"
+    ],
+    "format": "single",
+    "question_type": "assessment"
+  },
+  {
+    "id": "0041",
+    "stem": "Which of the following findings is more appropriately documented in the client's psychosocial assessment rather than the Mental Status Examination?",
+    "options": {
+      "A": "The client's disorganized thought processes",
+      "B": "The client's family psychiatric history",
+      "C": "The client's level of orientation to person, place, and time",
+      "D": "The client's speech rate and fluency"
+    },
+    "correct_answers": [
+      "B"
+    ],
+    "format": "single",
+    "question_type": "assessment"
+  },
+  {
+    "id": "0044",
+    "stem": "Which of the following symptoms is NOT part of the CIWA-Ar (Clinical Institute Withdrawal Assessment for Alcohol) scoring system?",
+    "options": {
+      "A": "Tremors",
+      "B": "Paroxysmal sweating",
+      "C": "Auditory hallucinations",
+      "D": "Nausea and vomiting"
+    },
+    "correct_answers": [
+      "C"
+    ],
+    "format": "single",
+    "question_type": "assessment"
+  },
+  {
+    "id": "0045",
+    "stem": "A client undergoing alcohol withdrawal is assessed with a CIWA-Ar score of 16. Based on standard protocols, this score indicates that the client is experiencing:",
+    "options": {
+      "A": "Mild withdrawal requiring only supportive care",
+      "B": "Moderate withdrawal that typically requires benzodiazepine administration",
+      "C": "Severe withdrawal necessitating intensive monitoring and aggressive intervention",
+      "D": "No withdrawal symptoms"
+    },
+    "correct_answers": [
+      "C"
+    ],
+    "format": "single",
+    "question_type": "assessment"
+  },
+  {
+    "id": "0048",
+    "stem": "A nurse is planning care for a client with severe depressive symptoms and passive suicidal ideation noted during the MSE. Which interventions should be included in the care plan? Select all that apply.",
+    "options": {
+      "A": "Initiate safety precautions, such as one-to-one observation",
+      "B": "Collaborate immediately with a mental health specialist for further risk evaluation",
+      "C": "Administer pharmacotherapy immediately without further assessment",
+      "D": "Document the client's statements and behaviors comprehensively",
+      "E": "Plan for a follow-up MSE to monitor changes in suicidal ideation"
+    },
+    "correct_answers": [
+      "D",
+      "B",
+      "E",
+      "A"
+    ],
+    "format": "sata",
+    "question_type": "implementation"
+  },
+  {
+    "id": "0053",
+    "stem": "Which of the following actions by a nurse during a psychiatric emergency requires immediate legal justification?",
+    "options": {
+      "A": "Placing a confused client in a quiet room with soft lighting",
+      "B": "Assigning a client to a one-to-one observation for suicidal ideation",
+      "C": "Using soft wrist restraints without an order when a client becomes violent",
+      "D": "Explaining medication side effects in simplified terms"
+    },
+    "correct_answers": [
+      "C"
+    ],
+    "format": "single",
+    "question_type": "priority"
+  },
+  {
+    "id": "0055",
+    "stem": "A client is admitted voluntarily to a psychiatric facility but later requests discharge. What is the nurse's best initial response?",
+    "options": {
+      "A": "Discharge the client immediately since they were admitted voluntarily",
+      "B": "Begin the process of involuntary commitment",
+      "C": "Inform the client they must wait 72 hours before discharge",
+      "D": "Notify the provider, who will assess whether discharge is safe"
+    },
+    "correct_answers": [
+      "D"
+    ],
+    "format": "single",
+    "question_type": "general"
+  },
+  {
+    "id": "0090",
+    "stem": "A 56-year-old man with type 2 diabetes took his usual morning rapid-acting insulin but skipped breakfast. He is diaphoretic, shaky, and anxious with difficulty focusing. VS: BP 132/78, HR 118, RR 22, SpO\u2082 96%. Capillary blood glucose is 42 mg/dL. He is awake and able to swallow. Based on the data provided, which nursing action is the PRIORITY right now?",
+    "options": {
+      "A": "Give 15\u201320 g of fast-acting carbohydrate (e.g., 4 oz juice)",
+      "B": "Notify the provider immediately",
+      "C": "Start an IV and prepare 50% dextrose",
+      "D": "Recheck the blood glucose in 15 minutes without treating"
+    },
+    "correct_answers": [
+      "A"
+    ],
+    "format": "single",
+    "question_type": "priority"
+  },
+  {
+    "id": "0091",
+    "stem": "Patient with long-standing Type 2 diabetes on basal/bolus regimen reports fatigue and intermittent headaches. VS: BP 138/84, HR 92, RR 18. Capillary blood glucose before lunch is 68 mg/dL after treatment with 15 g fast-acting carbohydrate 15 minutes ago. Triage area is busy with limited resources. Based on the data provided, after initial intervention, the patient's blood glucose is 68 mg/dL. He is more alert but complaining of headache. What should you do NEXT?",
+    "options": {
+      "A": "Take vitals and document findings",
+      "B": "Administer additional fast-acting glucose",
+      "C": "Document findings and continue to monitor without intervening",
+      "D": "Give the patient a complex carbohydrate snack"
+    },
+    "correct_answers": [
+      "D"
+    ],
+    "format": "single",
+    "question_type": "implementation"
+  },
+  {
+    "id": "0092",
+    "stem": "While reviewing the patient's medication administration record, you discover the night nurse gave 20 units of regular insulin instead of 2 units. You have assessed the patient and found no acute changes from baseline. Fingerstick glucose and vital signs are stable. The provider has not yet been notified; the event occurred on the previous shift. Based on the data provided, as the charge nurse, what is your FIRST action?",
+    "options": {
+      "A": "Complete an incident report first",
+      "B": "Contact the physician of the error",
+      "C": "Continue to monitor without taking timely action on the abnormal finding",
+      "D": "Discuss with the night nurse before notifying anyone"
+    },
+    "correct_answers": [
+      "B"
+    ],
+    "format": "single",
+    "question_type": "priority"
+  },
+  {
+    "id": "0093",
+    "stem": "You have assessed the patient and found no acute changes from baseline. Fingerstick glucose and vital signs are stable. The provider has not yet been notified; the event occurred on the previous shift. Based on the data provided, which leadership style is MOST appropriate when addressing this medication error with the night nurse?",
+    "options": {
+      "A": "Democratic - involve the nurse in developing solutions",
+      "B": "Autocratic - direct the nurse on exact procedures",
+      "C": "Laissez-faire - let the nurse determine next steps",
+      "D": "Transformational - inspire the nurse to exceed expectations"
+    },
+    "correct_answers": [
+      "A"
+    ],
+    "format": "single",
+    "question_type": "assessment"
+  },
+  {
+    "id": "0098",
+    "stem": "An 84-year-old female patient with end-stage heart failure is admitted to your unit. Her daughter tells you, 'Mom said she never wants to be on machines, but we don't have any paperwork.' Family members express variable reactions; some are tearful, others quiet. No prior advance directives on file. Based on the data provided, what is your BEST initial response?",
+    "options": {
+      "A": "Tell me more about what your mother has shared with you",
+      "B": "Document findings and continue to monitor without intervening",
+      "C": "Contact social services immediately",
+      "D": "Explain hospital policies about advance directives"
+    },
+    "correct_answers": [
+      "A"
+    ],
+    "format": "single",
+    "question_type": "implementation"
+  },
+  {
+    "id": "0099",
+    "stem": "Family members express variable reactions; some are tearful, others quiet. No prior advance directives on file. Based on the data provided, the patient becomes unresponsive. The family is crying at the bedside. According to K\u00fcbler-Ross, which stage of grief are they MOST likely experiencing?",
+    "options": {
+      "A": "Denial",
+      "B": "Anger",
+      "C": "Cannot determine from this information",
+      "D": "Depression"
+    },
+    "correct_answers": [
+      "C"
+    ],
+    "format": "single",
+    "question_type": "implementation"
+  },
+  {
+    "id": "0100",
+    "stem": "The physician discusses code status with the family. They decide on DNR/DNI status. Family members express variable reactions; some are tearful, others quiet. No prior advance directives on file. Based on the data provided, which action by the nurse BEST demonstrates proper understanding of DNR/DNI orders?",
+    "options": {
+      "A": "Discontinue all medications immediately",
+      "B": "Continue to monitor without taking timely action on the abnormal finding",
+      "C": "Avoid all invasive procedures",
+      "D": "Continuing comfort care measures and prescribed treatments"
+    },
+    "correct_answers": [
+      "D"
+    ],
+    "format": "single",
+    "question_type": "implementation"
+  },
+  {
+    "id": "0102",
+    "stem": "Multiple casualties arrive at the ED after a bus accident. Using the START triage system, triage area is busy with limited resources. Apply ABCs and least/time-critical bias toward survivability. Based on the data provided, which patient should be seen FIRST?",
+    "options": {
+      "A": "Alert patient with a fractured femur, pulse 88, RR 18",
+      "B": "Unconscious patient with agonal breathing, pulse 40",
+      "C": "Confused patient with shallow breathing, RR 32, weak pulse",
+      "D": "Crying child with multiple lacerations, pulse 120, RR 24"
+    },
+    "correct_answers": [
+      "C"
+    ],
+    "format": "single",
+    "question_type": "priority"
+  },
+  {
+    "id": "0103",
+    "stem": "A patient arrives with 30% TBSA burns. Using the Parkland formula, the patient weighs 70 kg. Triage area is busy with limited resources. Apply ABCs and least/time-critical bias toward survivability. Based on the data provided, how much fluid should be administered in the first 8 hours?",
+    "options": {
+      "A": "8,400 mL",
+      "B": "6,300 mL",
+      "C": "2,100 mL",
+      "D": "4,200 mL"
+    },
+    "correct_answers": [
+      "D"
+    ],
+    "format": "single",
+    "question_type": "priority"
+  },
+  {
+    "id": "0104",
+    "stem": "Triage area is busy with limited resources. Apply ABCs and least/time-critical bias toward survivability. Based on the data provided, where would you assess for crepitus in a patient with suspected tension pneumothorax?",
+    "options": {
+      "A": "Chest wall over affected area",
+      "B": "Neck and supraclavicular area",
+      "C": "Abdomen",
+      "D": "Lower extremities"
+    },
+    "correct_answers": [
+      "A"
+    ],
+    "format": "single",
+    "question_type": "assessment"
+  },
+  {
+    "id": "0107",
+    "stem": "The LPN complains that the nursing assistant is not completing assigned tasks. Based on the data provided, what is your FIRST action in addressing this conflict?",
+    "options": {
+      "A": "Meet with both staff members separately",
+      "B": "Side with the LPN immediately",
+      "C": "Ignore the complaint",
+      "D": "Reassign all tasks yourself"
+    },
+    "correct_answers": [
+      "A"
+    ],
+    "format": "single",
+    "question_type": "priority"
+  },
+  {
+    "id": "0111",
+    "stem": "A middle-aged patient with Type 2 diabetes skipped breakfast after taking morning insulin. Now he is diaphoretic, pale, and anxious with tremors and difficulty concentrating. VS: BP 132/78, HR 118, RR 22, SpO\u2082 96%. Fingerstick glucose is 42 mg/dL. Based on the newborn's data, which threshold requires immediate nursing action?",
+    "options": {
+      "A": "Blood glucose 60 mg/dL",
+      "B": "Blood glucose 45 mg/dL",
+      "C": "Blood glucose 100 mg/dL",
+      "D": "Blood glucose 80 mg/dL"
+    },
+    "correct_answers": [
+      "B"
+    ],
+    "format": "single",
+    "question_type": "priority"
+  },
+  {
+    "id": "0115",
+    "stem": "A 34-year-old female presents to the psychiatric unit after a suicide attempt. She states, 'I just want to die. My family would be better off without me.' Patient voices hopelessness and has fluctuating intent. Room has been safety-checked; sitter is available. Based on the data provided, what is your PRIORITY assessment?",
+    "options": {
+      "A": "Family history of mental illness",
+      "B": "Current suicide plan and means",
+      "C": "Previous psychiatric hospitalizations",
+      "D": "Current medication regimen"
+    },
+    "correct_answers": [
+      "B"
+    ],
+    "format": "single",
+    "question_type": "priority"
+  },
+  {
+    "id": "0117",
+    "stem": "The patient is placed on suicide precautions. Patient voices hopelessness and has fluctuating intent. Room has been safety-checked; sitter is available. Based on the data provided, which interventions are appropriate for suicide precautions? Select all that apply.",
+    "options": {
+      "A": "Remove all sharp objects from room",
+      "B": "Check on patient every 15 minutes",
+      "C": "Keep bathroom door locked",
+      "D": "Have patient eat with plastic utensils",
+      "E": "Assign patient to a private room",
+      "F": "Search belongings with patient present"
+    },
+    "correct_answers": [
+      "D",
+      "F",
+      "B",
+      "A"
+    ],
+    "format": "sata",
+    "question_type": "implementation"
+  },
+  {
+    "id": "0119",
+    "stem": "After 5 days, the patient is ready for discharge. Based on the data provided, which statement by the patient indicates need for further teaching?",
+    "options": {
+      "A": "I'll continue taking my medication as prescribed",
+      "B": "I can stop my medication once I feel better",
+      "C": "I will attend my follow-up appointments",
+      "D": "I'll call the crisis line if I have suicidal thoughts"
+    },
+    "correct_answers": [
+      "B"
+    ],
+    "format": "single",
+    "question_type": "assessment"
+  },
+  {
+    "id": "0120",
+    "stem": "A 22-year-old male is brought to the ED by police. He's shouting, 'The FBI is monitoring my thoughts through the TV!' Assess for command hallucinations, risk to self/others, and ability to reality-test. Use short, simple statements. Based on the data provided, what type of delusion is the patient experiencing?",
+    "options": {
+      "A": "Grandiose",
+      "B": "Somatic",
+      "C": "Nihilistic",
+      "D": "Persecutory"
+    },
+    "correct_answers": [
+      "D"
+    ],
+    "format": "single",
+    "question_type": "assessment"
+  },
+  {
+    "id": "0121",
+    "stem": "Given the clinical information, the patient becomes agitated and threatening. What is the PRIORITY intervention?",
+    "options": {
+      "A": "Call security immediately",
+      "B": "Administer PRN haloperidol",
+      "C": "Physically restrain the patient",
+      "D": "Use de-escalation techniques"
+    },
+    "correct_answers": [
+      "D"
+    ],
+    "format": "single",
+    "question_type": "priority"
+  },
+  {
+    "id": "0122",
+    "stem": "The patient is admitted and started on risperidone (Risperdal). Based on the data provided, which side effect requires IMMEDIATE intervention?",
+    "options": {
+      "A": "Mild sedation",
+      "B": "Dry mouth",
+      "C": "Muscle rigidity with fever",
+      "D": "Slight weight gain"
+    },
+    "correct_answers": [
+      "C"
+    ],
+    "format": "single",
+    "question_type": "priority"
+  },
+  {
+    "id": "0123",
+    "stem": "Based on the data provided, place these interventions for a psychotic patient in priority order:",
+    "options": {
+      "A": "Establish trust and rapport",
+      "B": "Administer antipsychotic medication",
+      "C": "Ensure safety of patient and others",
+      "D": "Orient patient to reality",
+      "E": "Assess for command hallucinations"
+    },
+    "correct_answers": [
+      "D",
+      "B",
+      "E",
+      "C",
+      "A"
+    ],
+    "format": "sata",
+    "question_type": "priority"
+  },
+  {
+    "id": "0124",
+    "stem": "Given the clinical information, a patient having a panic attack reports chest pain, shortness of breath, and feeling of doom. After ruling out cardiac issues, what is your BEST intervention?",
+    "options": {
+      "A": "Stay with patient and speak calmly",
+      "B": "Give detailed explanation of panic attacks",
+      "C": "Leave patient alone to rest",
+      "D": "Encourage rapid breathing exercises"
+    },
+    "correct_answers": [
+      "A"
+    ],
+    "format": "single",
+    "question_type": "implementation"
+  },
+  {
+    "id": "0125",
+    "stem": "Given the clinical information, which statement by a patient with generalized anxiety disorder indicates effective coping?",
+    "options": {
+      "A": "I avoid situations that make me anxious",
+      "B": "I practice mindfulness meditation daily",
+      "C": "I drink alcohol to help me relax",
+      "D": "I keep my feelings to myself"
+    },
+    "correct_answers": [
+      "B"
+    ],
+    "format": "single",
+    "question_type": "assessment"
+  },
+  {
+    "id": "0126",
+    "stem": "Given the clinical information, which are appropriate nursing interventions for anxiety? Select all that apply.",
+    "options": {
+      "A": "Minimize environmental stimuli",
+      "B": "Encourage verbalization of feelings",
+      "C": "Tell patient their fears are irrational",
+      "D": "Teach progressive muscle relaxation",
+      "E": "Remain with patient during panic attack",
+      "F": "Encourage caffeine restriction"
+    },
+    "correct_answers": [
+      "D",
+      "B",
+      "E",
+      "F",
+      "A"
+    ],
+    "format": "sata",
+    "question_type": "implementation"
+  },
+  {
+    "id": "0129",
+    "stem": "Given the clinical information, an adult patient has multiple bruises in various stages of healing. When asked, she states, 'I'm just clumsy.' What is your NEXT action?",
+    "options": {
+      "A": "Accept her explanation and move on",
+      "B": "Document findings and continue to monitor without intervening",
+      "C": "Directly ask if someone is hurting her",
+      "D": "Call social services immediately"
+    },
+    "correct_answers": [
+      "C"
+    ],
+    "format": "single",
+    "question_type": "implementation"
+  },
+  {
+    "id": "0131",
+    "stem": "Given the clinical information, a child states, 'Uncle Tom touches me in my private places.' Your FIRST action is:",
+    "options": {
+      "A": "Tell the child you believe them",
+      "B": "Ask detailed questions about what happened",
+      "C": "Promise to keep it secret",
+      "D": "Document findings and continue to monitor without intervening"
+    },
+    "correct_answers": [
+      "A"
+    ],
+    "format": "single",
+    "question_type": "priority"
+  },
+  {
+    "id": "0134",
+    "stem": "Recent lithium level returned at 1.8 mEq/L; patient reports coarse tremor and unsteady gait. Based on the data provided, a patient on lithium has a level of 1.8 mEq/L. Which finding is MOST concerning?",
+    "options": {
+      "A": "Mild nausea",
+      "B": "Fine hand tremor",
+      "C": "Slurred speech",
+      "D": "Increased thirst"
+    },
+    "correct_answers": [
+      "C"
+    ],
+    "format": "single",
+    "question_type": "assessment"
+  },
+  {
+    "id": "0135",
+    "stem": "Diet recall includes aged cheese, cured meats, and red wine at a party last night. Based on the data provided, before administering an MAOI, which dietary restriction is MOST important to verify?",
+    "options": {
+      "A": "Tyramine-free diet",
+      "B": "Low-sodium diet",
+      "C": "High-protein diet",
+      "D": "Gluten-free diet"
+    },
+    "correct_answers": [
+      "A"
+    ],
+    "format": "single",
+    "question_type": "priority"
+  },
+  {
+    "id": "0136",
+    "stem": "Latest CBC: WBC 2,900/mm\u00b3, ANC 1,200/mm\u00b3. Based on the data provided, a patient on clozapine (Clozaril) requires which monitoring?",
+    "options": {
+      "A": "Daily blood pressure checks",
+      "B": "Weekly WBC counts",
+      "C": "Monthly liver function tests",
+      "D": "Annual eye exams"
+    },
+    "correct_answers": [
+      "B"
+    ],
+    "format": "single",
+    "question_type": "assessment"
+  },
+  {
+    "id": "0137",
+    "stem": "Given the clinical information, which patient statement indicates understanding of electroconvulsive therapy (ECT)?",
+    "options": {
+      "A": "I'll need someone to drive me home after each session",
+      "B": "I won't have any memory problems",
+      "C": "I can return to work immediately after",
+      "D": "This treatment will cure my depression permanently"
+    },
+    "correct_answers": [
+      "A"
+    ],
+    "format": "single",
+    "question_type": "assessment"
+  },
+  {
+    "id": "0138",
+    "stem": "Assess for command hallucinations, risk to self/others, and ability to reality-test. Use short, simple statements. Based on the data provided, which of the following are considered positive symptoms in this presentation? Select all that apply.",
+    "options": {
+      "A": "Hallucinations",
+      "B": "Flat affect",
+      "C": "Delusions",
+      "D": "Avolition",
+      "E": "Disorganized speech",
+      "F": "Social withdrawal"
+    },
+    "correct_answers": [
+      "E",
+      "C",
+      "A"
+    ],
+    "format": "sata",
+    "question_type": "assessment"
+  },
+  {
+    "id": "0139",
+    "stem": "Given the clinical information, a patient with bipolar disorder in manic phase has not slept for 3 days. Which intervention is PRIORITY?",
+    "options": {
+      "A": "Encourage sleep hygiene education",
+      "B": "Increase daily activities to tire the patient",
+      "C": "Discuss the importance of sleep with patient",
+      "D": "Give prescribed sedative"
+    },
+    "correct_answers": [
+      "D"
+    ],
+    "format": "single",
+    "question_type": "priority"
+  },
+  {
+    "id": "0182",
+    "stem": "Central line in place; serum glucose trending up over 24 hours. Risk for refeeding/electrolyte shifts if malnourished. Based on the data provided, priority assessment for a patient receiving TPN includes:",
+    "options": {
+      "A": "Daily weight monitoring",
+      "B": "Checking insertion site",
+      "C": "Monitoring intake and output",
+      "D": "Blood glucose monitoring"
+    },
+    "correct_answers": [
+      "D"
+    ],
+    "format": "single",
+    "question_type": "priority"
+  },
+  {
+    "id": "0185",
+    "stem": "Given the clinical information, an elderly patient with pneumonia has not voided in 8 hours. Initial intervention:",
+    "options": {
+      "A": "Insert urinary catheter immediately",
+      "B": "Perform bladder scan",
+      "C": "Notify the provider immediately",
+      "D": "Encourage increased fluid intake"
+    },
+    "correct_answers": [
+      "B"
+    ],
+    "format": "single",
+    "question_type": "implementation"
+  },
+  {
+    "id": "0186",
+    "stem": "Given the clinical information, prioritize these patients for assessment:",
+    "options": {
+      "A": "Post-op patient with absent pedal pulse",
+      "B": "Patient with new onset confusion",
+      "C": "COPD patient with O2 sat 88%",
+      "D": "Diabetic with blood glucose 250 mg/dL",
+      "E": "Patient requesting pain medication"
+    },
+    "correct_answers": [
+      "D",
+      "B",
+      "E",
+      "C",
+      "A"
+    ],
+    "format": "sata",
+    "question_type": "assessment"
+  }
+]
